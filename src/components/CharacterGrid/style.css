@@ -1,0 +1,7 @@
+.character-grid {
+  /* text-align: left; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  grid-gap: 5px;
+  padding-bottom: 108px;
+}

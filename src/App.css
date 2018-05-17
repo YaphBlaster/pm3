@@ -1,0 +1,221 @@
+.wrapper {
+  margin-top: 0px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.home-wrapper {
+  width: calc(100% - 40px);
+  margin-left: 20px;
+}
+
+body {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+}
+
+.meme-maker {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.input-top-text {
+  position: absolute;
+  width: 100%;
+  margin-top: 45px;
+}
+
+.input-bottom-text {
+  position: absolute;
+  width: 100%;
+  margin-top: -30px;
+}
+::placeholder {
+  color: yellow;
+  opacity: 0.5; /* Firefox */
+}
+
+input[type="text"] {
+  max-width: 800px;
+  padding: 12px 20px;
+  border: dashed;
+  border-color: rgba(255, 255, 255, 0.6);
+  /* border-radius: 4px; */
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  color: yellow;
+  font-style: italic;
+  text-shadow: 2px 2px #000;
+  font-weight: bold;
+}
+
+.meme-image {
+  width: 100%;
+}
+
+button.create-meme {
+  width: 195px;
+  height: 55px;
+  background-color: #2f80ed;
+  color: white;
+  font-size: 18px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  font-weight: 300;
+  border: none;
+}
+
+p {
+  color: white;
+}
+
+button.add-button {
+  width: 195px;
+  height: 55px;
+  background-color: #000;
+  color: #2f80ed;
+  font-size: 18px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  font-weight: 300;
+  border: 1px solid #2f80ed;
+}
+
+div.copy-to-clipboard {
+  width: 300px;
+  height: 55px;
+  background-color: #2f80ed;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  font-weight: 300;
+  border: none;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20px;
+}
+
+.facebook-share-button,
+.twitter-share-button,
+.reddit-share-button,
+.email-share-button,
+.clipboard-icon {
+  width: 64px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.clipboard-icon {
+  position: absolute;
+  margin-top: 12px;
+  left: 0px;
+}
+
+.copy-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.share-bar {
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-text {
+  color: white;
+}
+
+.clipboard-icon {
+  color: white;
+}
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+  width: 100%;
+}
+
+.empty-state {
+  color: white;
+  margin: 15%;
+  font-size: 1.1em;
+}
+
+.film-bg {
+  transform: rotate(15deg);
+}
+
+.swipe-wrapper {
+  margin-top: -20px;
+}
+
+.badge {
+  position: relative;
+  margin: 0 0px 26px -6px;
+  padding: 0 !important;
+}
+
+.move-button {
+  margin-top: 20px;
+  margin-right: calc(((100% - 800px) / 2) + 20px);
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 0%;
+}
+
+.filler-text {
+  color: white;
+  height: 100vh;
+}
+
+.social-icon {
+  border-radius: 5px;
+}
+
+input,
+textarea,
+button,
+select,
+a,
+span {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.st-btn {
+  zoom: 150%;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .move-button {
+    margin-top: 20px;
+    margin-right: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    right: 0;
+  }
+}

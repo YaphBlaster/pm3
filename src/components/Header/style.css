@@ -1,0 +1,75 @@
+.header-bar {
+  height: 55px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  color: white;
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+}
+
+.main-menu-header-bar {
+  height: 55px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  color: white;
+  position: relative;
+  top: -1px;
+  z-index: 10;
+}
+
+a {
+  color: white;
+}
+
+.back-button {
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  margin-left: auto;
+  line-height: 40px;
+}
+
+.back-button {
+  height: 55px;
+  width: 55px;
+  /* text-align: center; */
+}
+
+.back-button-hidden {
+  height: 55px;
+  width: 55px;
+  visibility: hidden;
+  /* text-align: center; */
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.action-button {
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  margin-left: auto;
+  line-height: 55px;
+  margin-top: -5px;
+}
+
+.name-text {
+  color: white;
+  width: calc(100% - 110px);
+  height: inherit;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 55px;
+  font-weight: 900;
+  font-size: 18px;
+  text-shadow: 2px 2px #000;
+  text-transform: capitalize;
+  text-decoration: none;
+}

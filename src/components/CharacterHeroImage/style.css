@@ -1,0 +1,36 @@
+.character-profile {
+  width: 100%;
+  /* padding-top: calc(100% / (207/80)); */
+  /* background-color: purple; */
+  color: white;
+}
+
+.character-profile-hero-image {
+  width: 100%;
+  /* padding-top: calc(100% / (207/80)); */
+  /* background-color: purple; */
+  color: white;
+}
+
+.character-profile-name-text {
+  float: left;
+  margin-top: -70px;
+  margin-left: 20px;
+  font-size: 32px;
+  font-weight: 900;
+  position: relative;
+  text-shadow: 2px 2px #000;
+  bottom: 10px;
+  text-transform: capitalize;
+}
+
+.character-profile-episode-text {
+  float: left;
+  margin-top: -41px;
+  font-weight: 900;
+  font-size: 18px;
+  position: relative;
+  margin-left: 20px;
+  text-shadow: 2px 2px #000;
+  line-height: 21px;
+}

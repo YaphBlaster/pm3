@@ -1,0 +1,65 @@
+.thumbnail-grid {
+  color: white;
+}
+
+.thumbnail-grid-text {
+  font-weight: 400;
+  font-size: 18px;
+  margin-left: 20px;
+  text-shadow: 2px 2px #000000;
+  padding: 20px 0;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(374px, 1fr));
+  grid-gap: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.thumbnail {
+  margin: 0 auto;
+}
+
+.thumbnail-image {
+  width: 374px;
+}
+
+.show-more-button {
+  width: 195px;
+  height: 55px;
+  background-color: #2f80ed;
+  color: white;
+  font-size: 18px;
+  line-height: 21px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  /* padding: 0px 0; */
+  font-weight: 300;
+  border: none;
+}
+
+.add-thumb-to-multi {
+  position: absolute;
+  margin-left: 308px;
+  margin-top: 0px;
+  color: rgba(255, 64, 129, 0.5);
+  cursor: pointer;
+  padding: 25px;
+}
+
+.add-thumb-to-multi-added {
+  position: absolute;
+  margin-left: 308px;
+  margin-top: 0px;
+  color: rgba(255, 64, 129, 0.5);
+  pointer-events: none;
+  padding: 25px;
+}
+
+.spacer {
+  margin-bottom: 100px;
+}
