@@ -5,6 +5,7 @@ import Thumbnail from "../Thumbnail";
 import Ripples from "react-ripples";
 import Loader from "react-loaders";
 import globalVariables from "../../data/GlobalVariables";
+import { connect } from "react-redux";
 
 const api = `${globalVariables.endpoint}keywords?tags=`;
 let nextSkipBy = 0;
@@ -22,29 +23,18 @@ class ThumbnailGrid extends Component {
     open: false
   };
 
-  getEpisode = episodeString => {
-    switch (episodeString) {
-      case "ep1":
-        return "Episode I";
-      case "ep2":
-        return "Episode II";
-      case "ep3":
-        return "Episode III";
-      default:
-        return "";
-    }
-  };
-
   fetchRequest = () => {
     this.setState({
       isLoading: true
     });
-    let apiString = `${api}${
-      this.props.tag
-    }&skipAmt=${nextSkipBy}&movie=${this.getEpisode(this.props.episodeRef)}`;
+    let apiString = `${api}${this.props.tag}&skipAmt=${nextSkipBy}&movie=${
+      this.props.episodeText
+    }`;
     axios
       .get(apiString)
       .then(response => {
+        console.log(this.props.episodeText);
+        console.log(apiString);
         let responseTemp;
         if (nextSkipBy === 0) {
           responseTemp = response.data.slice(0, initialNumOfThumbs);
@@ -56,21 +46,24 @@ class ThumbnailGrid extends Component {
             isInitial: false
           });
         }
+        let index = 0;
         for (const data of responseTemp) {
-          if (this.getEpisode(this.props.episodeRef) === data.movie) {
+          if (this.props.episodeText === data.movie) {
+            index++;
             thumbnailsTemp.push(data.thumb);
             const parsedUrl = data.url.lastIndexOf("/");
             screenshotsTemp.push(data.url.substring(parsedUrl + 1));
           }
         }
+
         this.setState(prevState => ({
           thumbnails: thumbnailsTemp,
           screenshots: screenshotsTemp,
           isLoading: false
         }));
         if (
-          (response.data.length !== 50 && !this.state.isInitial) ||
-          (response.data.length <= 4 && this.state.isInitial)
+          (index !== 50 && !this.state.isInitial) ||
+          (index < 4 && this.state.isInitial)
         ) {
           this.setState({
             hasMoreThumbnails: false
@@ -138,4 +131,7 @@ class ThumbnailGrid extends Component {
   }
 }
 
-export default ThumbnailGrid;
+const mapStateToProps = state => ({
+  episodeText: state.episodeSelector.episodeText
+});
+export default connect(mapStateToProps)(ThumbnailGrid);

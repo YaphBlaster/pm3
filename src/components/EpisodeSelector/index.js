@@ -48,10 +48,6 @@ class EpisodeSelector extends Component {
   }
 }
 
-EpisodeSelector.propTypes = {
-  index: PropTypes.number.isRequired
-};
-
 const mapStateToProps = state => ({
   episode: state.episodeSelector.episode
 });

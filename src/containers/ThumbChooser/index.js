@@ -17,23 +17,7 @@ class Content extends Component {
   };
   componentWillMount() {
     character = this.props.match.params;
-    console.log(character);
     window.scrollTo(0, 0);
-  }
-
-  handleClick = url => {
-    this.setState({
-      open: true
-    });
-    this.addToStrip(url);
-  };
-
-  componentDidMount() {
-    if (localStorage.getItem("memes")) {
-      memeArray = JSON.parse(localStorage.getItem("memes") || "[]");
-    } else {
-      memeArray = [];
-    }
   }
 
   handleRequestClose = () => {
@@ -80,22 +64,7 @@ class Content extends Component {
           handleClick={this.handleClick}
           heroImageHasLoaded={this.state.heroImageHasLoaded}
         />
-        <MuiThemeProvider>
-          <Snackbar
-            open={this.state.open}
-            contentStyle={{
-              color: "rgb(255, 64, 129)"
-            }}
-            message={
-              JSON.parse(localStorage.getItem("memes") || "[]").length <
-              maxMemeAmount
-                ? "Image added to Meme Strip"
-                : "Meme Strip is full"
-            }
-            autoHideDuration={4000}
-            onRequestClose={this.handleRequestClose}
-          />
-        </MuiThemeProvider>
+
       </div>
     );
   }

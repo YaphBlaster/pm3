@@ -17,6 +17,8 @@ import animateScrollTo from "animated-scroll-to";
 import Snackbar from "material-ui/Snackbar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import globalVariables from "../../data/GlobalVariables";
+import { connect } from "react-redux";
+import { addMeme } from "../Home/ducks";
 
 let url = "";
 let makeMemeUrl = "";
@@ -38,13 +40,6 @@ class MemeMaker extends Component {
 
   componentWillUnmount() {
     animateScrollTo(0);
-  }
-  componentDidMount() {
-    if (localStorage.getItem("memes")) {
-      memeArray = JSON.parse(localStorage.getItem("memes") || "[]");
-    } else {
-      memeArray = [];
-    }
   }
 
   handleClick = () => {
@@ -91,12 +86,8 @@ class MemeMaker extends Component {
   };
 
   addToStrip = () => {
-    if (
-      JSON.parse(localStorage.getItem("memes") || "[]").length <
-      globalVariables.maxMemeAmount
-    ) {
-      memeArray.push(this.props.match.params.url);
-      localStorage.setItem("memes", JSON.stringify(memeArray));
+    if (this.props.memes.length < globalVariables.maxMemeAmount) {
+      this.props.addMemeToCart(this.props.match.params.url);
       this.setState({
         hasAddedToMultiMeme: true
       });
@@ -286,8 +277,7 @@ class MemeMaker extends Component {
                   color: "rgb(255, 64, 129)"
                 }}
                 message={
-                  JSON.parse(localStorage.getItem("memes") || "[]").length <
-                  maxMemeAmount
+                  this.props.memes.length < globalVariables.maxMemeAmount
                     ? "Image added to Meme Strip"
                     : "Meme Strip is full"
                 }
@@ -313,4 +303,11 @@ class MemeMaker extends Component {
   }
 }
 
-export default MemeMaker;
+const mapStateToProps = state => ({
+  memes: state.memeCart.memes
+});
+
+const mapDispatchToProps = dispatch => ({
+  addMemeToCart: memeId => dispatch(addMeme(memeId))
+});
+export default connect(mapStateToProps, mapDispatchToProps)(MemeMaker);

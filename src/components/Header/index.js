@@ -4,6 +4,7 @@ import FontAwesome from "react-fontawesome";
 import { Link } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Badge from "material-ui/Badge";
+import { connect } from "react-redux";
 
 const Header = props => {
   return (
@@ -29,11 +30,21 @@ const Header = props => {
           style={{ marginTop: "10px" }}
         />
         <MuiThemeProvider>
-          <Badge badgeContent={1} secondary={true} className="badge" />
+          {props.memes.length > 0 ? (
+            <Badge
+              badgeContent={props.memes.length}
+              secondary={true}
+              className="badge"
+            />
+          ) : null}
         </MuiThemeProvider>
       </Link>
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = state => ({
+  memes: state.memeCart.memes
+});
+
+export default connect(mapStateToProps)(Header);
