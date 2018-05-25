@@ -20,11 +20,6 @@ import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
 import { addMeme } from "../Home/ducks";
 
-let url = "";
-let makeMemeUrl = "";
-let memeArray;
-const maxMemeAmount = 15;
-
 class MemeMaker extends Component {
   state = {
     hasAddedToMultiMeme: false,
@@ -64,7 +59,7 @@ class MemeMaker extends Component {
     this.setState({
       loading: true
     });
-    makeMemeUrl = `${
+    let makeMemeUrl = `${
       globalVariables.endpoint
     }makememe?url=https://prequelmemes.s3.amazonaws.com/${
       this.props.match.params.url

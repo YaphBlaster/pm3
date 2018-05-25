@@ -7,8 +7,6 @@ import { addMeme } from "../../containers/Home/ducks";
 import { MuiThemeProvider } from "material-ui/styles";
 import { Snackbar } from "material-ui";
 
-let memeArray;
-const maxMemeAmount = 15;
 class Thumbnail extends Component {
   state = {
     hasBeenAdded: false,
@@ -32,8 +30,11 @@ class Thumbnail extends Component {
     this.setState({
       open: true
     });
-    {this.props.memes.length < globalVariables.maxMemeAmount ? this.addToStrip() : null}
-    
+    {
+      this.props.memes.length < globalVariables.maxMemeAmount
+        ? this.addToStrip()
+        : null;
+    }
   };
 
   imageLoaded = () => {

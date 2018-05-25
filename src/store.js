@@ -7,7 +7,8 @@ import reducer from "./reducers";
 const persistConfig = {
   key: "root",
   storage: storage,
-  stateReconciler: autoMergeLevel2
+  stateReconciler: autoMergeLevel2,
+  blacklist: ["episodeSelector"]
 };
 
 const pReducer = persistReducer(persistConfig, reducer);

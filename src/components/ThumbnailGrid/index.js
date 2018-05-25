@@ -7,7 +7,7 @@ import Loader from "react-loaders";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
 
-const api = `${globalVariables.endpoint}keywords?tags=`;
+const api = `${globalVariables.endpoint}keywords2?tags=`;
 let nextSkipBy = 0;
 let thumbnailsTemp = [];
 let screenshotsTemp = [];
@@ -33,8 +33,6 @@ class ThumbnailGrid extends Component {
     axios
       .get(apiString)
       .then(response => {
-        console.log(this.props.episodeText);
-        console.log(apiString);
         let responseTemp;
         if (nextSkipBy === 0) {
           responseTemp = response.data.slice(0, initialNumOfThumbs);
@@ -48,12 +46,10 @@ class ThumbnailGrid extends Component {
         }
         let index = 0;
         for (const data of responseTemp) {
-          if (this.props.episodeText === data.movie) {
-            index++;
-            thumbnailsTemp.push(data.thumb);
-            const parsedUrl = data.url.lastIndexOf("/");
-            screenshotsTemp.push(data.url.substring(parsedUrl + 1));
-          }
+          index++;
+          thumbnailsTemp.push(data.thumb);
+          const parsedUrl = data.url.lastIndexOf("/");
+          screenshotsTemp.push(data.url.substring(parsedUrl + 1));
         }
 
         this.setState(prevState => ({

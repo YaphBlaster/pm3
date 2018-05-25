@@ -14,12 +14,25 @@ class CharacterHeroImage extends Component {
     });
   };
 
+  getEpisode = episodeString => {
+    switch (episodeString) {
+      case "ep1":
+        return "Episode I";
+      case "ep2":
+        return "Episode II";
+      case "ep3":
+        return "Episode III";
+      default:
+        return "";
+    }
+  };
+
   render() {
     return (
       <div className="character-profile">
         <img
           className="character-profile-hero-image"
-          src={CharacterData[this.props.episodeRef][this.props.tag].hero}
+          src={CharacterData[this.props.epCode][this.props.tag].hero}
           alt=""
           onLoad={() => this.imageLoaded()}
         />
@@ -29,7 +42,7 @@ class CharacterHeroImage extends Component {
               {this.props.name}
             </span>
             <span className="character-profile-episode-text">
-              {this.props.episodeText}
+              {this.getEpisode(this.props.epCode)}
             </span>
           </div>
         ) : null}
