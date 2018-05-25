@@ -25,7 +25,7 @@ import Snackbar from "material-ui/Snackbar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
-import { replaceMemes, clearMemes } from "../Home/ducks";
+import { replaceMemes, clearMemes, addMeme } from "../Home/ducks";
 
 const DragHandle = SortableHandle(() => (
   <FontAwesome className="move-button" name="bars" size="2x" />
@@ -86,10 +86,12 @@ class MultiMemeMaker extends Component {
       return element === memeId;
     });
 
+    this.props.clearMemeList();
+
     for (let i = 0; i < memesList.length; i++) {
       if (i === foundIndex) {
       } else {
-        memesTemp.push(memesList[i]);
+        this.props.addToMemeList(memesList[i]);
       }
     }
 
@@ -99,16 +101,6 @@ class MultiMemeMaker extends Component {
         itemsTemp2.push(element);
       }
     });
-
-    this.props.clearMemeList();
-
-    if (memesTemp[0] != null) {
-      this.props.replaceMemeList(memesTemp);
-    }
-
-    {
-      memesTemp[0] ? this.props.replaceMemeList(memesTemp) : null;
-    }
 
     this.setState({
       items: itemsTemp2
@@ -367,6 +359,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   replaceMemeList: memesList => dispatch(replaceMemes(memesList)),
+  addToMemeList: memeId => dispatch(addMeme(memeId)),
   clearMemeList: () => dispatch(clearMemes())
 });
 
