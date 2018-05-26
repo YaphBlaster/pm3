@@ -37,6 +37,10 @@ class MemeMaker extends Component {
     animateScrollTo(0);
   }
 
+  contextMenu = e => {
+    e.preventDefault();
+  };
+
   handleClick = () => {
     this.setState({
       open: true
@@ -208,6 +212,7 @@ class MemeMaker extends Component {
 
             <br />
             <img
+              onContextMenu={this.contextMenu}
               src={
                 "https://prequelmemes.s3.amazonaws.com/" +
                 this.props.match.params.url

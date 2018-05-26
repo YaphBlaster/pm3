@@ -28,6 +28,10 @@ class StripMeme extends Component {
       hasImageLoaded: true
     });
   };
+
+  contextMenu = e => {
+    e.preventDefault();
+  };
   render() {
     return (
       <div
@@ -42,6 +46,7 @@ class StripMeme extends Component {
           onClick={this.deleteFromCartEvent}
         />
         <img
+          onContextMenu={this.contextMenu}
           src={"https://prequelmemes.s3.amazonaws.com/" + this.props.meme}
           className="meme-image"
           alt=""
