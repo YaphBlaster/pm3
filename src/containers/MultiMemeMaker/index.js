@@ -78,7 +78,6 @@ class MultiMemeMaker extends Component {
 
   removeMeme = (memeId, index, key) => {
     let itemsTemp = this.state.items;
-    let memesTemp = [];
     let itemsTemp2 = [];
     let memesList = this.props.memes;
 
@@ -363,4 +362,7 @@ const mapDispatchToProps = dispatch => ({
   clearMemeList: () => dispatch(clearMemes())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MultiMemeMaker);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MultiMemeMaker);

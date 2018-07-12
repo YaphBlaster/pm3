@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./style.css";
-import { Link, Route } from "react-router-dom";
-import ThumbChooser from "../../containers/ThumbChooser";
+import { Link } from "react-router-dom";
 
 class CharacterRegular extends Component {
   state = {

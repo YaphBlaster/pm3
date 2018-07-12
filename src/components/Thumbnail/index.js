@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FontAwesome from "react-fontawesome";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
@@ -30,11 +30,10 @@ class Thumbnail extends Component {
     this.setState({
       open: true
     });
-    {
-      this.props.memes.length < globalVariables.maxMemeAmount
-        ? this.addToStrip()
-        : null;
-    }
+
+    this.props.memes.length < globalVariables.maxMemeAmount
+      ? this.addToStrip()
+      : null;
   };
 
   imageLoaded = () => {
@@ -104,4 +103,7 @@ const mapDispatchToProps = dispatch => ({
   addMemeToCart: memeId => dispatch(addMeme(memeId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Thumbnail);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Thumbnail);

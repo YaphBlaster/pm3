@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Header from "../../components/Header";
 import CharacterHeroImage from "../../components/CharacterHeroImage";
 import ThumbnailGrid from "../../components/ThumbnailGrid";
-import { MuiThemeProvider } from "material-ui/styles";
-import { Snackbar } from "material-ui";
 import ReactGA from "react-ga";
 
 let character;

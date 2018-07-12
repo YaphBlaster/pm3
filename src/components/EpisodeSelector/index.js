@@ -56,4 +56,11 @@ const mapDispatchToProps = dispatch => ({
   changeEpTo: episode => dispatch(changedEpisode(episode))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EpisodeSelector);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EpisodeSelector);
+
+EpisodeSelector.propTypes = {
+  episode: PropTypes.number.isRequired
+};
