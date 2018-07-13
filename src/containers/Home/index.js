@@ -39,11 +39,13 @@ class Home extends Component {
             characters={CharacterData.ep1}
             episode="ep1"
             logo={movieLogo1}
+            updateHeight={() => this.swipeableActions.updateHeight()}
           />
           <Movie
             characters={CharacterData.ep2}
             episode="ep2"
             logo={movieLogo2}
+            updateHeight={() => this.swipeableActions.updateHeight()}
           />
         </BindKeyboardSwipeableViews>
         <EpisodeSelector />
@@ -60,4 +62,7 @@ const mapDispatchToProps = dispatch => ({
   changeEpTo: episode => dispatch(changedEpisode(episode))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

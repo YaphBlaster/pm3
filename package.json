@@ -12,6 +12,7 @@
     "react-dom": "^16.3.2",
     "react-fontawesome": "^1.6.1",
     "react-ga": "^2.5.2",
+    "react-images-loaded": "^2.0.0",
     "react-loaders": "^3.0.1",
     "react-redux": "^5.0.7",
     "react-ripples": "^1.1.2",
