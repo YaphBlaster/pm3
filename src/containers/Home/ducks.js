@@ -1,7 +1,9 @@
 //ACTIONS
 const ADD_MEME = "ADD_MEME";
+const REMOVE_MEME = "REMOVE_MEME";
 const REPLACE_MEMES = "REPLACE_MEMES";
 const CLEAR_MEMES = "CLEAR_MEMES";
+const ADD_TEXT = "ADD_TEXT";
 
 const initialState = {
   memes: []
@@ -16,9 +18,31 @@ export function reducer(state = initialState, action) {
     case ADD_MEME: {
       return {
         ...state,
-        memes: [...state.memes, action.memeId]
+        memes: [
+          ...state.memes,
+          {
+            memeID: action.memeId,
+            text: "",
+            randomizer: Math.random()
+              .toString()
+              .replace(".", "")
+          }
+        ]
       };
     }
+    case REMOVE_MEME: {
+      for (let i = 0; i < state.memes.length; i++) {
+        if (state.memes[i].randomizer == action.randomizer) {
+          let newArray = state.memes.slice();
+          newArray.splice(i, 1);
+          return {
+            ...state,
+            memes: newArray
+          };
+        }
+      }
+    }
+
     case REPLACE_MEMES: {
       return {
         ...state,
@@ -30,6 +54,19 @@ export function reducer(state = initialState, action) {
         ...state,
         memes: []
       };
+    }
+
+    case ADD_TEXT: {
+      for (let i = 0; i < state.memes.length; i++) {
+        if (state.memes[i].randomizer == action.randomizer) {
+          let newArray = state.memes.slice();
+          newArray[i].text = action.text;
+          return {
+            ...state,
+            memes: newArray
+          };
+        }
+      }
     }
     default:
       return state;
@@ -44,6 +81,15 @@ export function addMeme(memeId) {
   };
 }
 
+//ACTION CREATORS
+export function removeMeme(memeId, randomizer) {
+  return {
+    type: REMOVE_MEME,
+    memeId,
+    randomizer
+  };
+}
+
 export function replaceMemes(memes) {
   return {
     type: ADD_MEME,
@@ -54,5 +100,13 @@ export function replaceMemes(memes) {
 export function clearMemes() {
   return {
     type: CLEAR_MEMES
+  };
+}
+
+export function addText(text, randomizer) {
+  return {
+    type: ADD_TEXT,
+    text,
+    randomizer
   };
 }
