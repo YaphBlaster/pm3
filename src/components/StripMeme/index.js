@@ -3,6 +3,8 @@ import FontAwesome from "react-fontawesome";
 import ReactGA from "react-ga";
 import "./style.css";
 import globalVariables from "../../data/GlobalVariables";
+import { connect } from "react-redux";
+import { addText } from "../../containers/Home/ducks";
 
 class StripMeme extends Component {
   state = {
@@ -31,6 +33,14 @@ class StripMeme extends Component {
 
   contextMenu = e => {
     e.preventDefault();
+  };
+
+  getTextValue = () => {
+    for (let i = 0; i < this.props.memes.length; i++) {
+      if (this.props.memes[i].randomizer == this.props.randomizer) {
+        return this.props.memes[i].text;
+      }
+    }
   };
   render() {
     return (
@@ -61,13 +71,31 @@ class StripMeme extends Component {
           placeholder="tap to add caption"
           maxLength={globalVariables.characterLimit}
           autoComplete="off"
+          value={this.getTextValue()}
           ref={input => {
             this.bottomTextInput = input;
           }}
+          onChange={() =>
+            this.props.addText(
+              this.bottomTextInput.value,
+              this.props.randomizer
+            )
+          }
         />
       </div>
     );
   }
 }
 
-export default StripMeme;
+const mapStateToProps = state => ({
+  memes: state.memeCart.memes
+});
+
+const mapDispatchToProps = dispatch => ({
+  addText: (text, randomizerKey) => dispatch(addText(text, randomizerKey))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StripMeme);

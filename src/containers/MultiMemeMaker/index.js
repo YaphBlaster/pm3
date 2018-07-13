@@ -25,7 +25,7 @@ import Snackbar from "material-ui/Snackbar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
-import { replaceMemes, clearMemes, addMeme } from "../Home/ducks";
+import { replaceMemes, clearMemes, addMeme, removeMeme } from "../Home/ducks";
 
 const DragHandle = SortableHandle(() => (
   <FontAwesome className="move-button" name="bars" size="2x" />
@@ -61,12 +61,11 @@ class MultiMemeMaker extends Component {
       return this.state.items.push(
         <StripMeme
           key={index}
-          meme={meme}
+          meme={meme.memeID}
           id={index}
-          randomizer={Math.random()
-            .toString()
-            .replace(".", "")}
+          randomizer={meme.randomizer}
           removeItem={this.removeMeme}
+          text={meme.text}
         />
       );
     });
@@ -82,17 +81,10 @@ class MultiMemeMaker extends Component {
     let memesList = this.props.memes;
 
     let foundIndex = memesList.findIndex(element => {
-      return element === memeId;
+      return element.memeID === memeId;
     });
 
-    this.props.clearMemeList();
-
-    for (let i = 0; i < memesList.length; i++) {
-      if (i === foundIndex) {
-      } else {
-        this.props.addToMemeList(memesList[i]);
-      }
-    }
+    this.props.removeFromList(memeId, key);
 
     itemsTemp.forEach(element => {
       if (element.props.meme === memeId && element.props.randomizer === key) {
@@ -359,6 +351,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   replaceMemeList: memesList => dispatch(replaceMemes(memesList)),
   addToMemeList: memeId => dispatch(addMeme(memeId)),
+  removeFromList: (memeId, randomKey) =>
+    dispatch(removeMeme(memeId, randomKey)),
   clearMemeList: () => dispatch(clearMemes())
 });
 
