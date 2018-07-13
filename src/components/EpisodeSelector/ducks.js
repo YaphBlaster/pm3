@@ -1,6 +1,5 @@
 //ACTIONS
 const CHANGE_EPISODE = "CHANGE_EPISODE";
-const CHANGE_TEXT = "CHANGE_TEXT";
 
 const initialState = {
   episode: 0,
