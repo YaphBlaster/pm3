@@ -5,6 +5,7 @@ import "./style.css";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
 import { addText } from "../../containers/Home/ducks";
+import ImagesLoaded from "react-images-loaded";
 
 class StripMeme extends Component {
   state = {
@@ -52,39 +53,40 @@ class StripMeme extends Component {
           this.stripMeme = divBox;
         }}
       >
-        <FontAwesome
-          className="trash-button"
-          name="trash"
-          size="2x"
-          onClick={this.deleteFromCartEvent}
-        />
-        <img
-          onContextMenu={this.contextMenu}
-          src={"https://prequelmemes.s3.amazonaws.com/" + this.props.meme}
-          className="meme-image"
-          alt=""
-          onLoad={() => this.imageLoaded()}
-        />
-        <br />
+        <ImagesLoaded done={() => this.setState({ hasImageLoaded: true })}>
+          <FontAwesome
+            className="trash-button"
+            name="trash"
+            size="2x"
+            onClick={this.deleteFromCartEvent}
+          />
+          <img
+            onContextMenu={this.contextMenu}
+            src={"https://prequelmemes.s3.amazonaws.com/" + this.props.meme}
+            className="meme-image"
+            alt=""
+          />
+          <br />
 
-        <input
-          className="input-bottom-text"
-          type="text"
-          name="bottomText"
-          placeholder="tap to add caption"
-          maxLength={globalVariables.characterLimit}
-          autoComplete="off"
-          value={this.getTextValue()}
-          ref={input => {
-            this.bottomTextInput = input;
-          }}
-          onChange={() =>
-            this.props.addText(
-              this.bottomTextInput.value,
-              this.props.randomizer
-            )
-          }
-        />
+          <input
+            className="input-bottom-text"
+            type="text"
+            name="bottomText"
+            placeholder="tap to add caption"
+            maxLength={globalVariables.characterLimit}
+            autoComplete="off"
+            value={this.getTextValue()}
+            ref={input => {
+              this.bottomTextInput = input;
+            }}
+            onChange={() =>
+              this.props.addText(
+                this.bottomTextInput.value,
+                this.props.randomizer
+              )
+            }
+          />
+        </ImagesLoaded>
       </div>
     );
   }
