@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { addMeme } from "../../containers/Home/ducks";
 import { MuiThemeProvider } from "material-ui/styles";
 import { Snackbar } from "material-ui";
+import ReactGA from "react-ga";
 
 class Thumbnail extends Component {
   state = {
@@ -17,6 +18,12 @@ class Thumbnail extends Component {
   addToStrip = () => {
     this.setState({
       hasBeenAdded: true
+    });
+    ReactGA.event({
+      category: "Cart",
+      action: "Added To Cart With Plus Icon",
+      label: "Cart Usage",
+      value: 1
     });
     this.props.addMemeToCart(this.props.screenshotUrl);
     setTimeout(() => {

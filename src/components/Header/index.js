@@ -5,8 +5,19 @@ import { Link } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Badge from "material-ui/Badge";
 import { connect } from "react-redux";
+import ReactGA from "react-ga";
 
 const Header = props => {
+  const openCartEvent = () => {
+    console.log("hello");
+    ReactGA.event({
+      category: "Cart",
+      action: "Opened Cart",
+      label: "Cart Usage",
+      value: 1
+    });
+  };
+
   return (
     <div
       className={props.hideBackButton ? "main-menu-header-bar" : "header-bar"}
@@ -22,7 +33,7 @@ const Header = props => {
       <Link to="/" className={props.hideBackButton ? "hidden" : "name-text"}>
         {props.title ? props.title : null}
       </Link>
-      <Link to="/createStrip" className="action-button">
+      <Link to="/createStrip" className="action-button" onClick={openCartEvent}>
         <FontAwesome
           className="back-button"
           name="film"
