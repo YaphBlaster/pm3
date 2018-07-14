@@ -1,4 +1,4 @@
-const arrayMove = require("array-move");
+import arrayMove from "array-move";
 
 //ACTIONS
 const ADD_MEME = "ADD_MEME";

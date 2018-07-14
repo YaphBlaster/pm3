@@ -93,12 +93,12 @@ class MemeMaker extends Component {
 
       document.querySelector(".add-button").disabled = true;
     } else {
-      //   ReactGA.event({
-      //     category: "Cart",
-      //     action: "Max Cart Reached",
-      //     label: "Cart Usage",
-      //     value: 1
-      //   });
+      ReactGA.event({
+        category: "Cart",
+        action: "Max Cart Reached",
+        label: "Cart Usage",
+        value: 1
+      });
     }
     this.handleClick();
   };
@@ -310,4 +310,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addMemeToCart: memeId => dispatch(addMeme(memeId))
 });
-export default connect(mapStateToProps, mapDispatchToProps)(MemeMaker);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MemeMaker);

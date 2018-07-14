@@ -6,16 +6,33 @@ import ThumbChooser from "./containers/ThumbChooser";
 import SingleMemeMaker from "./containers/SingleMemeMaker";
 import MultiMemeMaker from "./containers/MultiMemeMaker";
 import "loaders.css";
+import ReactGA from "react-ga";
+import WithTracker from "./containers/WithTracker";
+
+const DEFAULT_CONFIG = {
+  trackingId: "UA-101421397-1",
+  debug: true,
+  gaOptions: {
+    cookieDomain: "none"
+  }
+};
 
 class App extends Component {
+  componentDidMount() {
+    ReactGA.initialize([DEFAULT_CONFIG]);
+  }
+
   render() {
     return (
       <Router>
         <div className="wrapper ">
           <Route exact path="/" component={Home} />
-          <Route path="/:ep/:tag/:name" component={ThumbChooser} />
-          <Route path="/createMeme/:url" component={SingleMemeMaker} />
-          <Route path="/createStrip" component={MultiMemeMaker} />
+          <Route path="/:ep/:tag/:name" component={WithTracker(ThumbChooser)} />
+          <Route
+            path="/createMeme/:url"
+            component={WithTracker(SingleMemeMaker)}
+          />
+          <Route path="/createStrip" component={WithTracker(MultiMemeMaker)} />
         </div>
       </Router>
     );
