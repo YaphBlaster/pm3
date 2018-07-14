@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <Router>
         <div className="wrapper ">
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={WithTracker(Home)} />
           <Route path="/:ep/:tag/:name" component={WithTracker(ThumbChooser)} />
           <Route
             path="/createMeme/:url"
