@@ -5,6 +5,12 @@
   max-width: 800px;
 }
 
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
 .home-wrapper {
   width: calc(100% - 40px);
   margin-left: 20px;

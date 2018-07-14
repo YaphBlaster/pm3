@@ -20,12 +20,18 @@ import {
   SortableHandle,
   arrayMove
 } from "react-sortable-hoc";
-
+import ImagesLoaded from "react-images-loaded";
 import Snackbar from "material-ui/Snackbar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
-import { replaceMemes, clearMemes, addMeme, removeMeme } from "../Home/ducks";
+import {
+  replaceMemes,
+  clearMemes,
+  addMeme,
+  removeMeme,
+  moveMeme
+} from "../Home/ducks";
 
 const DragHandle = SortableHandle(() => (
   <FontAwesome className="move-button" name="bars" size="2x" />
@@ -110,6 +116,8 @@ class MultiMemeMaker extends Component {
     const inputs = document.querySelectorAll(".input-bottom-text");
     let oldInputTextTemp = inputs[oldIndex].value;
     let newInputTextTemp = inputs[newIndex].value;
+
+    this.props.moveMeme(oldIndex, newIndex);
 
     this.setState({
       items: arrayMove(this.state.items, oldIndex, newIndex)
@@ -226,6 +234,8 @@ class MultiMemeMaker extends Component {
   };
 
   render() {
+    var hiddenStyle = { height: 0, overflow: "hidden" };
+    var visibleStyle = {};
     return (
       <div className="meme-maker">
         <Header showBackButton={true} title="Create Meme Strip" />
@@ -295,31 +305,37 @@ class MultiMemeMaker extends Component {
                 </div>
               </div>
             ) : (
-              <SortableList
-                items={this.state.items}
-                onSortStart={this.onSortStart}
-                onSortEnd={this.onSortEnd}
-                useDragHandle={true}
-              />
+              <div style={this.state.showImages ? visibleStyle : hiddenStyle}>
+                <ImagesLoaded done={() => this.setState({ showImages: true })}>
+                  <SortableList
+                    items={this.state.items}
+                    onSortStart={this.onSortStart}
+                    onSortEnd={this.onSortEnd}
+                    useDragHandle={true}
+                  />
+                </ImagesLoaded>
+              </div>
             )}
             {this.state.image ? null : (
               <div>
                 <br />
                 <br />
                 <br />
-                <Ripples color="rgba(255,255,255,0.3)">
-                  <button
-                    className="create-meme"
-                    onClick={() => this.createMemeStripEvent()}
-                  >
-                    {" "}
-                    {this.state.loading ? (
-                      <Loader type="line-scale" active />
-                    ) : (
-                      "Create Meme Strip"
-                    )}
-                  </button>
-                </Ripples>
+                {this.state.showImages ? (
+                  <Ripples color="rgba(255,255,255,0.3)">
+                    <button
+                      className="create-meme"
+                      onClick={() => this.createMemeStripEvent()}
+                    >
+                      {" "}
+                      {this.state.loading ? (
+                        <Loader type="line-scale" active />
+                      ) : (
+                        "Create Meme Strip"
+                      )}
+                    </button>
+                  </Ripples>
+                ) : null}
               </div>
             )}
           </div>
@@ -353,7 +369,8 @@ const mapDispatchToProps = dispatch => ({
   addToMemeList: memeId => dispatch(addMeme(memeId)),
   removeFromList: (memeId, randomKey) =>
     dispatch(removeMeme(memeId, randomKey)),
-  clearMemeList: () => dispatch(clearMemes())
+  clearMemeList: () => dispatch(clearMemes()),
+  moveMeme: (oldIndex, newIndex) => dispatch(moveMeme(oldIndex, newIndex))
 });
 
 export default connect(
