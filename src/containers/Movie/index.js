@@ -8,8 +8,8 @@ class Movie extends Component {
   state = { showImages: false };
 
   doneLoading = () => {
-    this.props.updateHeight();
     this.setState({ showImages: true });
+    this.props.updateHeight();
   };
   render() {
     const hiddenStyle = { height: 0, overflow: "hidden" };

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "animated-scroll-to": "^1.2.1",
+    "array-move": "^1.0.0",
     "axios": "^0.18.0",
     "loaders.css": "^0.1.2",
     "material-ui": "^0.20.1",

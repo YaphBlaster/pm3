@@ -1,9 +1,12 @@
+const arrayMove = require("array-move");
+
 //ACTIONS
 const ADD_MEME = "ADD_MEME";
 const REMOVE_MEME = "REMOVE_MEME";
 const REPLACE_MEMES = "REPLACE_MEMES";
 const CLEAR_MEMES = "CLEAR_MEMES";
 const ADD_TEXT = "ADD_TEXT";
+const MOVE_MEME = "MOVE_MEME";
 
 const initialState = {
   memes: []
@@ -68,6 +71,15 @@ export function reducer(state = initialState, action) {
         }
       }
     }
+
+    case MOVE_MEME: {
+      const newArray = arrayMove(state.memes, action.oldIndex, action.newIndex);
+      return {
+        ...state,
+        memes: newArray
+      };
+    }
+
     default:
       return state;
   }
@@ -108,5 +120,13 @@ export function addText(text, randomizer) {
     type: ADD_TEXT,
     text,
     randomizer
+  };
+}
+
+export function moveMeme(oldIndex, newIndex) {
+  return {
+    type: MOVE_MEME,
+    oldIndex,
+    newIndex
   };
 }
