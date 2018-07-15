@@ -48,13 +48,14 @@ class StripMeme extends Component {
     const visibleStyle = {};
     return (
       <div
-        style={this.state.hasImageLoaded ? visibleStyle : hiddenStyle}
+        style={this.state.hasImageLoaded ? null : hiddenStyle}
         ref={divBox => {
           this.stripMeme = divBox;
         }}
       >
-        <ImagesLoaded done={() => this.setState({ hasImageLoaded: true })}>
+        <ImagesLoaded done={() => this.imageLoaded()}>
           <FontAwesome
+            style={this.state.hasImageLoaded ? null : hiddenStyle}
             className="trash-button"
             name="trash"
             size="2x"
@@ -85,6 +86,7 @@ class StripMeme extends Component {
                 this.props.randomizer
               )
             }
+            style={this.state.hasImageLoaded ? null : { display: "none" }}
           />
         </ImagesLoaded>
       </div>

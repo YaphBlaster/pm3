@@ -234,7 +234,7 @@ class MultiMemeMaker extends Component {
   };
 
   render() {
-    var hiddenStyle = { height: 0, overflow: "hidden" };
+    var hiddenStyle = { display: "none" };
     var visibleStyle = {};
     return (
       <div className="meme-maker">
@@ -305,15 +305,22 @@ class MultiMemeMaker extends Component {
                 </div>
               </div>
             ) : (
-              <div style={this.state.showImages ? visibleStyle : hiddenStyle}>
-                <ImagesLoaded done={() => this.setState({ showImages: true })}>
-                  <SortableList
-                    items={this.state.items}
-                    onSortStart={this.onSortStart}
-                    onSortEnd={this.onSortEnd}
-                    useDragHandle={true}
-                  />
-                </ImagesLoaded>
+              <div>
+                <div style={this.state.showImages ? null : hiddenStyle}>
+                  <ImagesLoaded
+                    done={() => this.setState({ showImages: true })}
+                  >
+                    <SortableList
+                      items={this.state.items}
+                      onSortStart={this.onSortStart}
+                      onSortEnd={this.onSortEnd}
+                      useDragHandle={true}
+                    />
+                  </ImagesLoaded>
+                </div>
+                {this.state.showImages ? null : (
+                  <Loader type="line-scale" active color="#bf9800" />
+                )}
               </div>
             )}
             {this.state.image ? null : (

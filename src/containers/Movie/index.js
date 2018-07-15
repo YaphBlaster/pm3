@@ -26,7 +26,7 @@ class Movie extends Component {
           </ImagesLoaded>
         </div>
         {this.state.showImages ? null : (
-          <Loader className="center" type="line-scale" active />
+          <Loader className="center" type="line-scale" active color="#bf9800" />
         )}
       </div>
     );
