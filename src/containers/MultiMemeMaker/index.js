@@ -305,7 +305,7 @@ class MultiMemeMaker extends Component {
                 </div>
               </div>
             ) : (
-              <div>
+              <div className="meme-list">
                 <div style={this.state.showImages ? null : hiddenStyle}>
                   <ImagesLoaded
                     done={() => this.setState({ showImages: true })}
@@ -325,9 +325,6 @@ class MultiMemeMaker extends Component {
             )}
             {this.state.image ? null : (
               <div>
-                <br />
-                <br />
-                <br />
                 {this.state.showImages ? (
                   <Ripples color="rgba(255,255,255,0.3)">
                     <button

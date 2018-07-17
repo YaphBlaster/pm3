@@ -67,27 +67,28 @@ class StripMeme extends Component {
             className="meme-image"
             alt=""
           />
-          <br />
 
-          <input
-            className="input-bottom-text"
-            type="text"
-            name="bottomText"
-            placeholder="tap to add caption"
-            maxLength={globalVariables.characterLimit}
-            autoComplete="off"
-            value={this.getTextValue()}
-            ref={input => {
-              this.bottomTextInput = input;
-            }}
-            onChange={() =>
-              this.props.addText(
-                this.bottomTextInput.value,
-                this.props.randomizer
-              )
-            }
-            style={this.state.hasImageLoaded ? null : { display: "none" }}
-          />
+          <span className="input-block">
+            <input
+              className="input-bottom-text"
+              type="text"
+              name="bottomText"
+              placeholder="tap to add caption"
+              maxLength={globalVariables.characterLimit}
+              autoComplete="off"
+              value={this.getTextValue()}
+              ref={input => {
+                this.bottomTextInput = input;
+              }}
+              onChange={() =>
+                this.props.addText(
+                  this.bottomTextInput.value,
+                  this.props.randomizer
+                )
+              }
+              style={this.state.hasImageLoaded ? null : { display: "none" }}
+            />
+          </span>
         </ImagesLoaded>
       </div>
     );

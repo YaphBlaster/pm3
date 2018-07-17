@@ -12,6 +12,10 @@
   margin-top: 250px;
 }
 
+.input-block {
+  display: block;
+}
+
 .home-wrapper {
   width: calc(100% - 40px);
   margin-left: 20px;
@@ -35,7 +39,7 @@ body {
 .input-top-text {
   position: absolute;
   width: 100%;
-  margin-top: 45px;
+  margin-top: 25px;
 }
 
 .input-bottom-text {
@@ -70,6 +74,11 @@ input[type="text"] {
 .meme-image {
   width: 100%;
   -webkit-touch-callout: none;
+  /* margin-bottom: 30px; */
+}
+
+.single-meme-form {
+  margin-top: 20px;
 }
 
 button.create-meme {
@@ -83,6 +92,7 @@ button.create-meme {
   padding: 0;
   font-weight: 300;
   border: none;
+  margin-top: 55px;
 }
 
 p {
@@ -100,6 +110,7 @@ button.add-button {
   padding: 0;
   font-weight: 300;
   border: 1px solid #2f80ed;
+  margin-top: 20px;
 }
 
 div.copy-to-clipboard {

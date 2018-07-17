@@ -195,22 +195,23 @@ class MemeMaker extends Component {
             </div>
           </div>
         ) : (
-          <div>
+          <div className="single-meme-form">
             {this.state.hasImageLoaded ? (
-              <input
-                className="input-top-text"
-                type="text"
-                name="topText"
-                placeholder="tap to add caption"
-                maxLength={globalVariables.characterLimit}
-                autoComplete="off"
-                ref={input => {
-                  this.topTextInput = input;
-                }}
-              />
+              <span className="input-block">
+                <input
+                  className="input-top-text"
+                  type="text"
+                  name="topText"
+                  placeholder="tap to add caption"
+                  maxLength={globalVariables.characterLimit}
+                  autoComplete="off"
+                  ref={input => {
+                    this.topTextInput = input;
+                  }}
+                />
+              </span>
             ) : null}
 
-            <br />
             <img
               onContextMenu={this.contextMenu}
               src={
@@ -223,53 +224,53 @@ class MemeMaker extends Component {
                 this.imageLoaded();
               }}
             />
-            <br />
 
             {this.state.hasImageLoaded ? (
-              <input
-                className="input-bottom-text"
-                type="text"
-                name="bottomText"
-                placeholder="tap to add caption"
-                maxLength={globalVariables.characterLimit}
-                autoComplete="off"
-                ref={input => {
-                  this.bottomTextInput = input;
-                }}
-              />
+              <span className="input-block">
+                <input
+                  className="input-bottom-text"
+                  type="text"
+                  name="bottomText"
+                  placeholder="tap to add caption"
+                  maxLength={globalVariables.characterLimit}
+                  autoComplete="off"
+                  ref={input => {
+                    this.bottomTextInput = input;
+                  }}
+                />
+              </span>
             ) : null}
 
-            <br />
-            <br />
-            <br />
-            <Ripples color="rgba(255,255,255,0.3)">
-              <button
-                className="create-meme"
-                onClick={() => this.createMemeEvent()}
-              >
-                {" "}
-                {this.state.loading ? (
-                  <Loader type="line-scale" active />
-                ) : (
-                  "Create Meme"
-                )}
-              </button>
-            </Ripples>
+            <span className="input-block">
+              <Ripples color="rgba(255,255,255,0.3)">
+                <button
+                  className="create-meme"
+                  onClick={() => this.createMemeEvent()}
+                >
+                  {" "}
+                  {this.state.loading ? (
+                    <Loader type="line-scale" active />
+                  ) : (
+                    "Create Meme"
+                  )}
+                </button>
+              </Ripples>
+            </span>
 
-            <br />
-            <br />
-            <Ripples color="rgba(47,128,237,0.3)">
-              <button
-                className="add-button"
-                onClick={() => this.addToStripEvent()}
-              >
-                {this.state.hasAddedToMultiMeme ? (
-                  <FontAwesome name="check-circle" size="2x" />
-                ) : (
-                  "Add to Strip"
-                )}
-              </button>
-            </Ripples>
+            <span className="input-block">
+              <Ripples color="rgba(47,128,237,0.3)">
+                <button
+                  className="add-button"
+                  onClick={() => this.addToStripEvent()}
+                >
+                  {this.state.hasAddedToMultiMeme ? (
+                    <FontAwesome name="check-circle" size="2x" />
+                  ) : (
+                    "Add to Strip"
+                  )}
+                </button>
+              </Ripples>
+            </span>
             <MuiThemeProvider>
               <Snackbar
                 open={this.state.open}
