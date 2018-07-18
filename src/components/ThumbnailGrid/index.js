@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./style.css";
 import axios from "axios";
 import Thumbnail from "../Thumbnail";
 import Ripples from "react-ripples";

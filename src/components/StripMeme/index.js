@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import FontAwesome from "react-fontawesome";
 import ReactGA from "react-ga";
-import "./style.css";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
 import { addText } from "../../containers/Home/ducks";

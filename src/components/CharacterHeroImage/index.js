@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./style.css";
 import CharacterData from "../../data/CharacterData";
 import { connect } from "react-redux";
 

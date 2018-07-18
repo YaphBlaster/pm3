@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Home from "./containers/Home";
-import "./App.css";
+import "./css/style.css";
 import ThumbChooser from "./containers/ThumbChooser";
 import SingleMemeMaker from "./containers/SingleMemeMaker";
 import MultiMemeMaker from "./containers/MultiMemeMaker";

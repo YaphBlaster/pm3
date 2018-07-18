@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import CharacterRegular from "../CharacterRegular";
 import PropTypes from "prop-types";
 
