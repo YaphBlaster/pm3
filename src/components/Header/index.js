@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import FontAwesome from "react-fontawesome";
 import { Link } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
