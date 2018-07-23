@@ -84,11 +84,6 @@ class MultiMemeMaker extends Component {
   removeMeme = (memeId, index, key) => {
     let itemsTemp = this.state.items;
     let itemsTemp2 = [];
-    let memesList = this.props.memes;
-
-    let foundIndex = memesList.findIndex(element => {
-      return element.memeID === memeId;
-    });
 
     this.props.removeFromList(memeId, key);
 
@@ -102,7 +97,6 @@ class MultiMemeMaker extends Component {
     this.setState({
       items: itemsTemp2
     });
-    this.forceUpdate();
   };
 
   onSortStart = () => {
@@ -110,6 +104,7 @@ class MultiMemeMaker extends Component {
     for (const input of inputs) {
       input.style.visibility = "hidden";
     }
+    document.querySelector(".create-meme").style.visibility = "hidden";
   };
 
   onSortEnd = ({ oldIndex, newIndex }) => {
@@ -133,6 +128,9 @@ class MultiMemeMaker extends Component {
     document.querySelectorAll(".input-bottom-text")[
       oldIndex
     ].value = newInputTextTemp;
+    setTimeout(() => {
+      document.querySelector(".create-meme").style.visibility = "visible";
+    }, 50);
   };
 
   handleClipboardClose = () => {
