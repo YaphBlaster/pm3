@@ -47,6 +47,12 @@ class Home extends Component {
             logo={movieLogo2}
             updateHeight={() => this.swipeableActions.updateHeight()}
           />
+          <Movie
+            characters={CharacterData.ep3}
+            episode="ep3"
+            logo={movieLogo3}
+            updateHeight={() => this.swipeableActions.updateHeight()}
+          />
         </BindKeyboardSwipeableViews>
         <EpisodeSelector />
       </div>
