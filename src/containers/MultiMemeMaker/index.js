@@ -319,7 +319,12 @@ class MultiMemeMaker extends Component {
                   </ImagesLoaded>
                 </div>
                 {this.state.showImages ? null : (
-                  <Loader type="line-scale" active color="#bf9800" />
+                  <Loader
+                    className="center"
+                    type="line-scale"
+                    active
+                    color="#bf9800"
+                  />
                 )}
               </div>
             )}

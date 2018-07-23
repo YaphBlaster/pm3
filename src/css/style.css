@@ -264,7 +264,9 @@ a {
 
 body {
   background-color: black;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0; }
 
 .meme-maker {
   width: 100%;
