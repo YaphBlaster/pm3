@@ -5,6 +5,7 @@ import Ripples from "react-ripples";
 import Loader from "react-loaders";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
+import ImagesLoaded from "react-images-loaded";
 
 const api = `${globalVariables.endpoint}keywords2?tags=`;
 let nextSkipBy = 0;
@@ -89,19 +90,21 @@ class ThumbnailGrid extends Component {
         </div>
         <div>
           {this.props.heroImageHasLoaded ? (
-            <div className="thumbnails">
-              {this.state.thumbnails.map((thumbnail, index) => {
-                return (
-                  <Thumbnail
-                    className="thumbnail"
-                    key={index}
-                    thumbnailUrl={thumbnail}
-                    screenshotUrl={this.state.screenshots[index]}
-                    handleClick={this.props.handleClick}
-                  />
-                );
-              })}
-            </div>
+            <ImagesLoaded done={() => this.props.hasLoaded()}>
+              <div className="thumbnails">
+                {this.state.thumbnails.map((thumbnail, index) => {
+                  return (
+                    <Thumbnail
+                      className="thumbnail"
+                      key={index}
+                      thumbnailUrl={thumbnail}
+                      screenshotUrl={this.state.screenshots[index]}
+                      handleClick={this.props.handleClick}
+                    />
+                  );
+                })}
+              </div>
+            </ImagesLoaded>
           ) : null}
 
           {this.state.hasMoreThumbnails ? (
