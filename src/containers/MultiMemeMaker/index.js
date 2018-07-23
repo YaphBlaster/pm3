@@ -34,7 +34,7 @@ import {
 } from "../Home/ducks";
 
 const DragHandle = SortableHandle(() => (
-  <FontAwesome className="move-button" name="bars" size="2x" />
+  <FontAwesome className="move-button" name="arrows" size="2x" />
 ));
 
 const SortableItem = SortableElement(({ value }) => (
@@ -254,7 +254,7 @@ class MultiMemeMaker extends Component {
         ) : (
           <div>
             {this.state.image ? (
-              <div>
+              <div className="rendered">
                 <img src={this.state.image} className="meme-image" alt="" />
                 <CopyToClipboard
                   className="copy-to-clipboard"
@@ -279,28 +279,6 @@ class MultiMemeMaker extends Component {
                     )}
                   </div>
                 </CopyToClipboard>
-
-                <p>Or share directly to</p>
-                <div className="share-bar">
-                  <FacebookShareButton
-                    url={this.state.image}
-                    className="facebook-share-button share-button"
-                  >
-                    <FacebookIcon size={64} />
-                  </FacebookShareButton>
-                  <TwitterShareButton
-                    url={this.state.image}
-                    className="twitter-share-button share-button"
-                  >
-                    <TwitterIcon size={64} />
-                  </TwitterShareButton>
-                  <RedditShareButton
-                    url={this.state.image}
-                    className="reddit-share-button share-button"
-                  >
-                    <RedditIcon size={64} />
-                  </RedditShareButton>
-                </div>
               </div>
             ) : (
               <div className="meme-list">
