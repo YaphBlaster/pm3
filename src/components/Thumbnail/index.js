@@ -7,6 +7,7 @@ import { addMeme } from "../../containers/Home/ducks";
 import { MuiThemeProvider } from "material-ui/styles";
 import { Snackbar } from "material-ui";
 import ReactGA from "react-ga";
+import Loader from "react-loaders";
 
 class Thumbnail extends Component {
   state = {
@@ -50,9 +51,10 @@ class Thumbnail extends Component {
   };
 
   render() {
+    const hiddenStyle = { height: 0, overflow: "hidden" };
     return (
       <div>
-        {this.state.hasLoadedImage ? (
+        {this.state.hasLoadedImage && this.props.hasAllLoaded ? (
           <FontAwesome
             name={
               this.props.memes.length < globalVariables.maxMemeAmount &&
@@ -69,9 +71,17 @@ class Thumbnail extends Component {
             size="lg"
             onClick={this.handleClick}
           />
-        ) : null}
-
+        ) : (
+          <div style={{ height: "200px" }}>
+            <Loader type="line-scale" active color="#bf9800" />
+          </div>
+        )}
         <Link
+          style={
+            this.state.hasLoadedImage && this.props.hasAllLoaded
+              ? null
+              : hiddenStyle
+          }
           className="thumbnail"
           to={`/createMeme/${this.props.screenshotUrl}`}
         >

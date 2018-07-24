@@ -19,7 +19,8 @@ class ThumbnailGrid extends Component {
     hasMoreThumbnails: true,
     isInitial: false,
     isLoading: true,
-    open: false
+    open: false,
+    hasAllLoaded: false
   };
 
   fetchRequest = () => {
@@ -73,15 +74,20 @@ class ThumbnailGrid extends Component {
     nextSkipBy = 0;
   }
 
+  imagesHaveLoaded = () => {
+    this.setState({
+      hasAllLoaded: true
+    });
+    this.props.hasLoaded();
+  };
+
   render() {
     return (
       <div className="thumbnail-grid">
-        <div className="thumbnail-grid-text">
-          {this.state.isInitial ? "Top Images" : "All Images"}
-        </div>
+        <div className="thumbnail-grid-text">Select an image</div>
         <div>
           {this.props.heroImageHasLoaded ? (
-            <ImagesLoaded done={() => this.props.hasLoaded()}>
+            <ImagesLoaded done={() => this.imagesHaveLoaded()}>
               <div className="thumbnails">
                 {this.state.thumbnails.map((thumbnail, index) => {
                   return (
@@ -91,6 +97,7 @@ class ThumbnailGrid extends Component {
                       thumbnailUrl={thumbnail}
                       screenshotUrl={this.state.screenshots[index]}
                       handleClick={this.props.handleClick}
+                      hasAllLoaded={this.state.hasAllLoaded}
                     />
                   );
                 })}
