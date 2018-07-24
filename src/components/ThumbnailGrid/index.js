@@ -11,14 +11,13 @@ const api = `${globalVariables.endpoint}keywords2?tags=`;
 let nextSkipBy = 0;
 let thumbnailsTemp = [];
 let screenshotsTemp = [];
-const initialNumOfThumbs = 4;
 
 class ThumbnailGrid extends Component {
   state = {
     thumbnails: [],
     screenshots: [],
     hasMoreThumbnails: true,
-    isInitial: true,
+    isInitial: false,
     isLoading: true,
     open: false
   };
@@ -34,16 +33,12 @@ class ThumbnailGrid extends Component {
       .get(apiString)
       .then(response => {
         let responseTemp;
-        if (nextSkipBy === 0) {
-          responseTemp = response.data.slice(0, initialNumOfThumbs);
-          nextSkipBy = initialNumOfThumbs;
-        } else {
-          responseTemp = response.data;
-          nextSkipBy += 50;
-          this.setState({
-            isInitial: false
-          });
-        }
+        responseTemp = response.data;
+        nextSkipBy += 50;
+        this.setState({
+          isInitial: false
+        });
+
         let index = 0;
         for (const data of responseTemp) {
           index++;
@@ -57,16 +52,12 @@ class ThumbnailGrid extends Component {
           screenshots: screenshotsTemp,
           isLoading: false
         }));
-        if (
-          (index !== 50 && !this.state.isInitial) ||
-          (index < 4 && this.state.isInitial)
-        ) {
+        if (index !== 50 && !this.state.isInitial) {
           this.setState({
             hasMoreThumbnails: false
           });
         }
       })
-
       .catch(error => {
         console.log(error);
       });
