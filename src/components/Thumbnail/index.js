@@ -72,7 +72,7 @@ class Thumbnail extends Component {
             onClick={this.handleClick}
           />
         ) : (
-          <div style={{ height: "200px" }}>
+          <div className="loader-container" style={{ height: "200px" }}>
             <Loader type="line-scale" active color="#bf9800" />
           </div>
         )}

@@ -262,6 +262,11 @@ a {
   width: calc(100% - 40px);
   margin-left: 20px; }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 body {
   background-color: black;
   font-family: "Roboto", sans-serif;
