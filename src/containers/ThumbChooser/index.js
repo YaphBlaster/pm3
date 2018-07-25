@@ -29,10 +29,9 @@ class Content extends Component {
   };
 
   render() {
-    const hiddenStyle = { height: 0, overflow: "hidden" };
     return (
       <div>
-        <div style={this.state.initialLoad ? null : hiddenStyle}>
+        <div>
           <Header title={character.name} />
           <CharacterHeroImage
             name={character.name}
@@ -49,9 +48,6 @@ class Content extends Component {
             hasLoaded={() => this.setHasLoaded()}
           />
         </div>
-        {this.state.initialLoad ? null : (
-          <Loader className="center" type="line-scale" active color="#bf9800" />
-        )}
       </div>
     );
   }

@@ -233,7 +233,6 @@ class MultiMemeMaker extends Component {
 
   render() {
     var hiddenStyle = { display: "none" };
-    var visibleStyle = {};
     return (
       <div className="meme-maker">
         <Header showBackButton={true} title="Create Meme Strip" />

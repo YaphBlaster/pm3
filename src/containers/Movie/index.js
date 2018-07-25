@@ -13,10 +13,9 @@ class Movie extends Component {
   };
   render() {
     const hiddenStyle = { height: 0, overflow: "hidden" };
-    const visibleStyle = {};
     return (
       <div>
-        <div style={this.state.showImages ? visibleStyle : hiddenStyle}>
+        <div style={this.state.showImages ? null : hiddenStyle}>
           <EpisodeLogo logo={this.props.logo} />
           <ImagesLoaded done={() => this.doneLoading()}>
             <CharacterGrid
