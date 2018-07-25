@@ -11,11 +11,13 @@ const api = `${globalVariables.endpoint}keywords2?tags=`;
 let nextSkipBy = 0;
 let thumbnailsTemp = [];
 let screenshotsTemp = [];
+let ids = [];
 
 class ThumbnailGrid extends Component {
   state = {
     thumbnails: [],
     screenshots: [],
+    ids: [],
     hasMoreThumbnails: true,
     isInitial: false,
     isLoading: true,
@@ -42,17 +44,20 @@ class ThumbnailGrid extends Component {
 
         let index = 0;
         for (const data of responseTemp) {
+          console.log(data);
           index++;
           thumbnailsTemp.push(data.thumb);
           const parsedUrl = data.url.lastIndexOf("/");
           screenshotsTemp.push(data.url.substring(parsedUrl + 1));
         }
+        console.log(index);
 
         this.setState(prevState => ({
           thumbnails: thumbnailsTemp,
           screenshots: screenshotsTemp,
           isLoading: false
         }));
+
         if (index !== 50 && !this.state.isInitial) {
           this.setState({
             hasMoreThumbnails: false
@@ -71,6 +76,7 @@ class ThumbnailGrid extends Component {
   componentWillUnmount() {
     thumbnailsTemp = [];
     screenshotsTemp = [];
+    ids = [];
     nextSkipBy = 0;
   }
 

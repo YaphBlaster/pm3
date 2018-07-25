@@ -44,7 +44,6 @@ class StripMeme extends Component {
   };
   render() {
     const hiddenStyle = { height: 0, overflow: "hidden" };
-    const visibleStyle = {};
     return (
       <div
         style={this.state.hasImageLoaded ? null : hiddenStyle}
