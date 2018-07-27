@@ -19,7 +19,7 @@ class ThumbnailGrid extends Component {
     screenshots: [],
     ids: [],
     hasMoreThumbnails: true,
-    isInitial: false,
+    isInitial: true,
     isLoading: true,
     open: false,
     hasAllLoaded: false
@@ -114,7 +114,7 @@ class ThumbnailGrid extends Component {
             </ImagesLoaded>
           ) : null}
 
-          {this.state.hasMoreThumbnails ? (
+          {this.state.hasMoreThumbnails && !this.state.isInitial ? (
             <Ripples color="rgba(255,255,255,0.3)">
               <button
                 className="show-more-button"
