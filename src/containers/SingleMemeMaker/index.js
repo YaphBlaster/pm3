@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import ReactGA from "react-ga";
 import axios from "axios";
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  RedditShareButton
-} from "react-share";
-
-import { FacebookIcon, TwitterIcon, RedditIcon } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import FontAwesome from "react-fontawesome";
 import Ripples from "react-ripples";

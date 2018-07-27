@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Header from "../../components/Header";
 import CharacterHeroImage from "../../components/CharacterHeroImage";
 import ThumbnailGrid from "../../components/ThumbnailGrid";
-import ReactGA from "react-ga";
-import Loader from "react-loaders";
 let character;
 
 class Content extends Component {

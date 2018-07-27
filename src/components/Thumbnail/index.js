@@ -8,6 +8,7 @@ import { MuiThemeProvider } from "material-ui/styles";
 import { Snackbar } from "material-ui";
 import ReactGA from "react-ga";
 import Loader from "react-loaders";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 class Thumbnail extends Component {
   state = {
@@ -39,15 +40,27 @@ class Thumbnail extends Component {
       open: true
     });
 
-    this.props.memes.length < globalVariables.maxMemeAmount
-      ? this.addToStrip()
-      : null;
+    if (this.props.memes.length < globalVariables.maxMemeAmount) {
+      this.addToStrip();
+    }
   };
 
   imageLoaded = () => {
     this.setState({
       hasLoadedImage: true
     });
+  };
+
+  copyToClipboardEvent = () => {
+    this.setState({
+      copied: true
+    });
+
+    setTimeout(() => {
+      this.setState({
+        copied: false
+      });
+    }, 2000);
   };
 
   render() {
@@ -92,6 +105,23 @@ class Thumbnail extends Component {
             onLoad={() => this.imageLoaded()}
           />
         </Link>
+        <CopyToClipboard
+          className="copy-to-clipboard"
+          text={this.props.id}
+          onCopy={this.copyToClipboardEvent}
+        >
+          <div>
+            {this.state.copied ? (
+              <FontAwesome
+                className="copy-text"
+                name="check-circle"
+                size="2x"
+              />
+            ) : (
+              <p className="copy-text">Copy id</p>
+            )}
+          </div>
+        </CopyToClipboard>
         <MuiThemeProvider>
           <Snackbar
             open={this.state.open}

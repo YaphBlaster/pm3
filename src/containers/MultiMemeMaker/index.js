@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import ReactGA from "react-ga";
 import axios from "axios";
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  RedditShareButton
-} from "react-share";
+
 import StripMeme from "../../components/StripMeme";
-import { FacebookIcon, TwitterIcon, RedditIcon } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import FontAwesome from "react-fontawesome";
 import Ripples from "react-ripples";
@@ -193,7 +188,6 @@ class MultiMemeMaker extends Component {
         });
     } else {
       const makeMemeUrl = `${globalVariables.endpoint}makememe?url=`;
-      memeImages[0].src;
       axios
         .get(`${makeMemeUrl}&topText=&bottomText=${memeInputs[0].value}`)
         .then(response => {
