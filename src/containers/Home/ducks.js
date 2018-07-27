@@ -35,7 +35,7 @@ export function reducer(state = initialState, action) {
     }
     case REMOVE_MEME: {
       for (let i = 0; i < state.memes.length; i++) {
-        if (state.memes[i].randomizer == action.randomizer) {
+        if (state.memes[i].randomizer === action.randomizer) {
           let newArray = state.memes.slice();
           newArray.splice(i, 1);
           return {
@@ -44,8 +44,8 @@ export function reducer(state = initialState, action) {
           };
         }
       }
+      break;
     }
-
     case REPLACE_MEMES: {
       return {
         ...state,
@@ -61,7 +61,7 @@ export function reducer(state = initialState, action) {
 
     case ADD_TEXT: {
       for (let i = 0; i < state.memes.length; i++) {
-        if (state.memes[i].randomizer == action.randomizer) {
+        if (state.memes[i].randomizer === action.randomizer) {
           let newArray = state.memes.slice();
           newArray[i].text = action.text;
           return {
@@ -70,6 +70,7 @@ export function reducer(state = initialState, action) {
           };
         }
       }
+      break;
     }
 
     case MOVE_MEME: {

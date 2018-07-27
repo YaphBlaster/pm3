@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import ReactGA from "react-ga";
 import axios from "axios";
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  RedditShareButton
-} from "react-share";
+
 import StripMeme from "../../components/StripMeme";
-import { FacebookIcon, TwitterIcon, RedditIcon } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import FontAwesome from "react-fontawesome";
 import Ripples from "react-ripples";
@@ -82,52 +77,44 @@ class MultiMemeMaker extends Component {
   }
 
   removeMeme = (memeId, index, key) => {
-    let itemsTemp = this.state.items;
-    let itemsTemp2 = [];
+    document.querySelector(".create-meme").style.visibility = "hidden";
 
+    let itemsTemp = this.state.items;
     this.props.removeFromList(memeId, key);
 
     itemsTemp.forEach(element => {
       if (element.props.meme === memeId && element.props.randomizer === key) {
-      } else {
-        itemsTemp2.push(element);
+        itemsTemp.splice(itemsTemp.indexOf(element), 1);
       }
     });
 
     this.setState({
-      items: itemsTemp2
+      items: itemsTemp
     });
+    if (this.props.memes.length > 1) {
+      setTimeout(() => {
+        document.querySelector(".create-meme").style.visibility = "visible";
+      }, 50);
+    }
   };
 
   onSortStart = () => {
-    const inputs = document.querySelectorAll(".input-bottom-text");
-    for (const input of inputs) {
+    for (const input of document.querySelectorAll(".input-bottom-text")) {
       input.style.visibility = "hidden";
     }
     document.querySelector(".create-meme").style.visibility = "hidden";
   };
 
   onSortEnd = ({ oldIndex, newIndex }) => {
-    const inputs = document.querySelectorAll(".input-bottom-text");
-    let oldInputTextTemp = inputs[oldIndex].value;
-    let newInputTextTemp = inputs[newIndex].value;
-
     this.props.moveMeme(oldIndex, newIndex);
 
     this.setState({
       items: arrayMove(this.state.items, oldIndex, newIndex)
     });
 
-    for (const input of inputs) {
+    for (const input of document.querySelectorAll(".input-bottom-text")) {
       input.style.visibility = "visible";
     }
-
-    document.querySelectorAll(".input-bottom-text")[
-      newIndex
-    ].value = oldInputTextTemp;
-    document.querySelectorAll(".input-bottom-text")[
-      oldIndex
-    ].value = newInputTextTemp;
     setTimeout(() => {
       document.querySelector(".create-meme").style.visibility = "visible";
     }, 50);
@@ -193,7 +180,6 @@ class MultiMemeMaker extends Component {
         });
     } else {
       const makeMemeUrl = `${globalVariables.endpoint}makememe?url=`;
-      memeImages[0].src;
       axios
         .get(`${makeMemeUrl}&topText=&bottomText=${memeInputs[0].value}`)
         .then(response => {

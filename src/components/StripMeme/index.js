@@ -37,7 +37,7 @@ class StripMeme extends Component {
 
   getTextValue = () => {
     for (let i = 0; i < this.props.memes.length; i++) {
-      if (this.props.memes[i].randomizer == this.props.randomizer) {
+      if (this.props.memes[i].randomizer === this.props.randomizer) {
         return this.props.memes[i].text;
       }
     }

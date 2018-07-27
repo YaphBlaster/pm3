@@ -11,7 +11,7 @@ const api = `${globalVariables.endpoint}keywords2?tags=`;
 let nextSkipBy = 0;
 let thumbnailsTemp = [];
 let screenshotsTemp = [];
-let ids = [];
+let idsTemp = [];
 
 class ThumbnailGrid extends Component {
   state = {
@@ -19,7 +19,7 @@ class ThumbnailGrid extends Component {
     screenshots: [],
     ids: [],
     hasMoreThumbnails: true,
-    isInitial: false,
+    isInitial: true,
     isLoading: true,
     open: false,
     hasAllLoaded: false
@@ -44,17 +44,16 @@ class ThumbnailGrid extends Component {
 
         let index = 0;
         for (const data of responseTemp) {
-          console.log(data);
           index++;
           thumbnailsTemp.push(data.thumb);
           const parsedUrl = data.url.lastIndexOf("/");
           screenshotsTemp.push(data.url.substring(parsedUrl + 1));
+          idsTemp.push(data._id);
         }
-        console.log(index);
-
         this.setState(prevState => ({
           thumbnails: thumbnailsTemp,
           screenshots: screenshotsTemp,
+          ids: idsTemp,
           isLoading: false
         }));
 
@@ -76,7 +75,7 @@ class ThumbnailGrid extends Component {
   componentWillUnmount() {
     thumbnailsTemp = [];
     screenshotsTemp = [];
-    ids = [];
+    idsTemp = [];
     nextSkipBy = 0;
   }
 
@@ -90,7 +89,10 @@ class ThumbnailGrid extends Component {
   render() {
     return (
       <div className="thumbnail-grid">
-        <div className="thumbnail-grid-text">Select an image</div>
+        {this.props.heroImageHasLoaded ? (
+          <div className="thumbnail-grid-text">Select an image</div>
+        ) : null}
+
         <div>
           {this.props.heroImageHasLoaded ? (
             <ImagesLoaded done={() => this.imagesHaveLoaded()}>
@@ -104,6 +106,7 @@ class ThumbnailGrid extends Component {
                       screenshotUrl={this.state.screenshots[index]}
                       handleClick={this.props.handleClick}
                       hasAllLoaded={this.state.hasAllLoaded}
+                      id={this.state.ids[index]}
                     />
                   );
                 })}
@@ -111,7 +114,7 @@ class ThumbnailGrid extends Component {
             </ImagesLoaded>
           ) : null}
 
-          {this.state.hasMoreThumbnails ? (
+          {this.state.hasMoreThumbnails && !this.state.isInitial ? (
             <Ripples color="rgba(255,255,255,0.3)">
               <button
                 className="show-more-button"

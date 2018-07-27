@@ -1,69 +1,63 @@
-import aayla from "./images/lego.jpg";
-import anakin from "./images/lego.jpg";
-import askaak from "./images/lego.jpg";
-import bail from "./images/lego.jpg";
-import battledroid from "./images/lego.jpg";
-import berulars from "./images/lego.jpg";
-import c3po from "./images/lego.jpg";
-import darthsidious from "./images/lego.jpg";
-import cody from "./images/lego.jpg";
-import dooku from "./images/lego.jpg";
-import kiadimundi from "./images/lego.jpg";
-import kitfisto from "./images/lego.jpg";
-import jarjar from "./images/lego.jpg";
+import sheevpalpatine from "./images/sheevpalpatine.jpg";
+import darthsidious from "./images/darthsidious.jpg";
+import anakin from "./images/anakin.jpg";
+import obiwan from "./images/obiwan.jpg";
+import padme from "./images/padme.jpg";
+import grievous from "./images/grievous.jpg";
+import kiadimundi from "./images/kiadimundi.jpg";
+import dooku from "./images/dooku.jpg";
+import yoda from "./images/yoda.jpg";
+import macewindu from "./images/macewindu.jpg";
+import vader from "./images/vader.jpg";
+import wookies from "./images/wookies.jpg";
+import nutegunray from "./images/nutegunray.jpg";
+import runehaako from "./images/runehaako.jpg";
+import bail from "./images/bail.jpg";
+import r2d2 from "./images/r2d2.jpg";
+import c3po from "./images/c3po.jpg";
+import battledroid from "./images/battledroid.jpg";
 import lego from "./images/lego.jpg";
-import siobibble from "./images/lego.jpg";
-import macewindu from "./images/lego.jpg";
-import nutegunray from "./images/lego.jpg";
-import obiwan from "./images/lego.jpg";
-import owenlars from "./images/lego.jpg";
-import padme from "./images/lego.jpg";
-import plokoon from "./images/lego.jpg";
-import poggle from "./images/lego.jpg";
-import r2d2 from "./images/lego.jpg";
-import r4p17 from "./images/lego.jpg";
-import runehaako from "./images/lego.jpg";
-import sheevpalpatine from "./images/lego.jpg";
-import stormtrooper from "./images/lego.jpg";
-import yoda from "./images/lego.jpg";
-import younglings from "./images/lego.jpg";
-import grievous from "./images/lego.jpg";
-import medon from "./images/lego.jpg";
-import slymoore from "./images/lego.jpg";
-import wookies from "./images/lego.jpg";
+import stormtrooper from "./images/stormtrooper.jpg";
+import berulars from "./images/berulars.jpg";
+import owenlars from "./images/owenlars.jpg";
+import masamedda from "./images/masamedda.jpg";
+import younglings from "./images/younglings.jpg";
+import kitfisto from "./images/kitfisto.jpg";
+import aayla from "./images/aayla.jpg";
+import r4p17 from "./images/r4p17.jpg";
+import slymoore from "./images/slymoore.jpg";
+import plokoon from "./images/plokoon.jpg";
+import jarjar from "./images/jarjar.jpg";
 
 export {
-  aayla,
-  anakin,
-  askaak,
-  bail,
-  battledroid,
-  berulars,
-  c3po,
-  darthsidious,
-  cody,
-  dooku,
-  kiadimundi,
-  kitfisto,
-  jarjar,
-  lego,
-  siobibble,
-  macewindu,
-  nutegunray,
-  obiwan,
-  owenlars,
-  padme,
-  plokoon,
-  poggle,
-  r2d2,
-  r4p17,
-  runehaako,
   sheevpalpatine,
-  stormtrooper,
-  yoda,
-  younglings,
+  darthsidious,
+  anakin,
+  obiwan,
+  padme,
   grievous,
-  medon,
+  kiadimundi,
+  dooku,
+  yoda,
+  macewindu,
+  vader,
+  wookies,
+  nutegunray,
+  runehaako,
+  bail,
+  r2d2,
+  c3po,
+  battledroid,
+  lego,
+  stormtrooper,
+  berulars,
+  owenlars,
+  masamedda,
+  younglings,
+  kitfisto,
+  aayla,
+  r4p17,
   slymoore,
-  wookies
+  plokoon,
+  jarjar
 };

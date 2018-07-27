@@ -39,15 +39,27 @@ class Thumbnail extends Component {
       open: true
     });
 
-    this.props.memes.length < globalVariables.maxMemeAmount
-      ? this.addToStrip()
-      : null;
+    if (this.props.memes.length < globalVariables.maxMemeAmount) {
+      this.addToStrip();
+    }
   };
 
   imageLoaded = () => {
     this.setState({
       hasLoadedImage: true
     });
+  };
+
+  copyToClipboardEvent = () => {
+    this.setState({
+      copied: true
+    });
+
+    setTimeout(() => {
+      this.setState({
+        copied: false
+      });
+    }, 2000);
   };
 
   render() {
