@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/Header";
 import CharacterHeroImage from "../../components/CharacterHeroImage";
 import ThumbnailGrid from "../../components/ThumbnailGrid";
+
 let character;
 
 class Content extends Component {
@@ -31,6 +32,7 @@ class Content extends Component {
       <div>
         <div>
           <Header title={character.name} />
+
           <CharacterHeroImage
             name={character.name}
             episodeRef={character.ep}

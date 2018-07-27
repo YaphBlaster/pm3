@@ -89,7 +89,10 @@ class ThumbnailGrid extends Component {
   render() {
     return (
       <div className="thumbnail-grid">
-        <div className="thumbnail-grid-text">Select an image</div>
+        {this.props.heroImageHasLoaded ? (
+          <div className="thumbnail-grid-text">Select an image</div>
+        ) : null}
+
         <div>
           {this.props.heroImageHasLoaded ? (
             <ImagesLoaded done={() => this.imagesHaveLoaded()}>

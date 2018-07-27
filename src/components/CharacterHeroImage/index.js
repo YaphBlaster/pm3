@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CharacterData from "../../data/CharacterData";
+import ImagesLoaded from "react-images-loaded";
 import { connect } from "react-redux";
 
 class CharacterHeroImage extends Component {
@@ -27,24 +28,31 @@ class CharacterHeroImage extends Component {
   };
 
   render() {
+    const hiddenStyle = { height: 0, overflow: "hidden" };
+
     return (
-      <div className="character-profile">
-        <img
-          className="character-profile-hero-image"
-          src={CharacterData[this.props.epCode][this.props.tag].hero}
-          alt=""
-          onLoad={() => this.imageLoaded()}
-        />
-        {this.state.hasLoaded ? (
-          <div>
-            <span className="character-profile-name-text">
-              {this.props.name}
-            </span>
-            <span className="character-profile-episode-text">
-              {this.getEpisode(this.props.epCode)}
-            </span>
-          </div>
-        ) : null}
+      <div
+        style={this.state.loaded ? null : hiddenStyle}
+        className="character-profile"
+      >
+        <ImagesLoaded done={() => this.setState({ loaded: true })}>
+          <img
+            className="character-profile-hero-image"
+            src={CharacterData[this.props.epCode][this.props.tag].hero}
+            alt=""
+            onLoad={() => this.imageLoaded()}
+          />
+          {this.state.hasLoaded ? (
+            <div>
+              <span className="character-profile-name-text">
+                {this.props.name}
+              </span>
+              <span className="character-profile-episode-text">
+                {this.getEpisode(this.props.epCode)}
+              </span>
+            </div>
+          ) : null}
+        </ImagesLoaded>
       </div>
     );
   }

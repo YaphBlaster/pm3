@@ -210,14 +210,7 @@ const characterMaster = {
       key: "aayla",
       image: Ep2CharacterImages.aayla,
       hero: Ep2CharacterHeroImages.aayla,
-      position: 0
-    },
-    acklay: {
-      displayName: "Acklay",
-      key: "acklay",
-      image: Ep2CharacterImages.acklay,
-      hero: Ep2CharacterHeroImages.acklay,
-      position: 1
+      position: 30
     },
     anakin: {
       displayName: "Anakin",
@@ -226,208 +219,166 @@ const characterMaster = {
       hero: Ep2CharacterHeroImages.anakin,
       position: 2
     },
-    askaak: {
-      displayName: "Askaak",
-      key: "askaak",
-      image: Ep2CharacterImages.askaak,
-      hero: Ep2CharacterHeroImages.askaak,
-      position: 3
-    },
     battledroid: {
       displayName: "Droids",
       key: "battledroid",
       image: Ep2CharacterImages.battledroid,
       hero: Ep2CharacterHeroImages.battledroid,
-      position: 4
+      position: 11
     },
     berulars: {
       displayName: "Beru",
       key: "berulars",
       image: Ep2CharacterImages.berulars,
       hero: Ep2CharacterHeroImages.berulars,
-      position: 5
+      position: 33
     },
     boba: {
       displayName: "Boba",
       key: "boba",
       image: Ep2CharacterImages.boba,
       hero: Ep2CharacterHeroImages.boba,
-      position: 6
+      position: 7
     },
     c3po: {
       displayName: "C3PO",
       key: "c3po",
       image: Ep2CharacterImages.c3po,
       hero: Ep2CharacterHeroImages.c3po,
-      position: 7
+      position: 19
     },
     gregartypho: {
       displayName: "Typho",
       key: "gregartypho",
       image: Ep2CharacterImages.gregartypho,
       hero: Ep2CharacterHeroImages.gregartypho,
-      position: 8
+      position: 31
     },
     cliegglars: {
       displayName: "Cliegg",
       key: "cliegglars",
       image: Ep2CharacterImages.cliegglars,
       hero: Ep2CharacterHeroImages.cliegglars,
-      position: 9
-    },
-    corde: {
-      displayName: "Corde",
-      key: "corde",
-      image: Ep2CharacterImages.corde,
-      hero: Ep2CharacterHeroImages.corde,
-      position: 10
+      position: 34
     },
     dooku: {
       displayName: "Dooku",
       key: "dooku",
       image: Ep2CharacterImages.dooku,
       hero: Ep2CharacterHeroImages.dooku,
-      position: 11
+      position: 5
     },
     darthsidious: {
       displayName: "Sidious",
       key: "darthsidious",
       image: Ep2CharacterImages.darthsidious,
       hero: Ep2CharacterHeroImages.darthsidious,
-      position: 12
+      position: 8
     },
     dexter: {
       displayName: "Dexter",
       key: "dexter",
       image: Ep2CharacterImages.dexter,
       hero: Ep2CharacterHeroImages.dexter,
-      position: 13
-    },
-    dorme: {
-      displayName: "Dorme",
-      key: "dorme",
-      image: Ep2CharacterImages.dorme,
-      hero: Ep2CharacterHeroImages.dorme,
-      position: 14
-    },
-    genosian: {
-      displayName: "Genosians",
-      key: "genosian",
-      image: Ep2CharacterImages.genosian,
-      hero: Ep2CharacterHeroImages.genosian,
-      position: 15
+      position: 24
     },
     siobibble: {
       displayName: "Bibble",
       key: "siobibble",
       image: Ep2CharacterImages.siobibble,
       hero: Ep2CharacterHeroImages.siobibble,
-      position: 16
+      position: 27
     },
     jango: {
       displayName: "Jango",
       key: "jango",
       image: Ep2CharacterImages.jango,
       hero: Ep2CharacterHeroImages.jango,
-      position: 16
+      position: 6
     },
     jarjar: {
       displayName: "Jarjar",
       key: "jarjar",
       image: Ep2CharacterImages.jarjar,
       hero: Ep2CharacterHeroImages.jarjar,
-      position: 18
+      position: 12
     },
     jedis: {
       displayName: "Jedis",
       key: "jedis",
       image: Ep2CharacterImages.jedis,
       hero: Ep2CharacterHeroImages.jedis,
-      position: 19
+      position: 20
     },
     kiadimundi: {
       displayName: "Mundi",
       key: "kiadimundi",
       image: Ep2CharacterImages.kiadimundi,
       hero: Ep2CharacterHeroImages.kiadimundi,
-      position: 20
+      position: 15
     },
     kitfisto: {
       displayName: "Fisto",
       key: "kitfisto",
       image: Ep2CharacterImages.kitfisto,
       hero: Ep2CharacterHeroImages.kitfisto,
-      position: 21
+      position: 14
     },
     lamesu: {
       displayName: "Lamesu",
       key: "lamesu",
       image: Ep2CharacterImages.lamesu,
       hero: Ep2CharacterHeroImages.lamesu,
-      position: 22
+      position: 21
     },
     lego: {
       displayName: "Random",
       key: "lego",
       image: Ep2CharacterImages.lego,
       hero: Ep2CharacterHeroImages.lego,
-      position: 23
-    },
-    luminara: {
-      displayName: "Luminara",
-      key: "luminara",
-      image: Ep2CharacterImages.luminara,
-      hero: Ep2CharacterHeroImages.luminara,
-      position: 24
+      position: 25
     },
     macewindu: {
       displayName: "Mace",
       key: "macewindu",
       image: Ep2CharacterImages.macewindu,
       hero: Ep2CharacterHeroImages.macewindu,
-      position: 25
+      position: 9
     },
     masamedda: {
       displayName: "Mas",
       key: "masamedda",
       image: Ep2CharacterImages.masamedda,
       hero: Ep2CharacterHeroImages.masamedda,
-      position: 26
+      position: 29
     },
     nutegunray: {
       displayName: "Nute",
       key: "nutegunray",
       image: Ep2CharacterImages.nutegunray,
       hero: Ep2CharacterHeroImages.nutegunray,
-      position: 27
+      position: 17
     },
     obiwan: {
       displayName: "Obiwan",
       key: "obiwan",
       image: Ep2CharacterImages.obiwan,
       hero: Ep2CharacterHeroImages.obiwan,
-      position: 28
+      position: 3
     },
     owenlars: {
       displayName: "Owen",
       key: "owenlars",
       image: Ep2CharacterImages.owenlars,
       hero: Ep2CharacterHeroImages.owenlars,
-      position: 29
+      position: 35
     },
     padme: {
       displayName: "Padme",
       key: "padme",
       image: Ep2CharacterImages.padme,
       hero: Ep2CharacterHeroImages.padme,
-      position: 30
-    },
-    plokoon: {
-      displayName: "Plo",
-      key: "plokoon",
-      image: Ep2CharacterImages.plokoon,
-      hero: Ep2CharacterHeroImages.plokoon,
-      position: 31
+      position: 4
     },
     poggle: {
       displayName: "Poggle",
@@ -436,357 +387,168 @@ const characterMaster = {
       hero: Ep2CharacterHeroImages.poggle,
       position: 32
     },
-    jamillia: {
-      displayName: "Jamillia",
-      key: "jamillia",
-      image: Ep2CharacterImages.jamillia,
-      hero: Ep2CharacterHeroImages.jamillia,
-      position: 33
-    },
     r2d2: {
       displayName: "R2D2",
       key: "r2d2",
       image: Ep2CharacterImages.r2d2,
       hero: Ep2CharacterHeroImages.r2d2,
-      position: 34
+      position: 18
     },
     r4p17: {
       displayName: "R4P17",
       key: "r4p17",
       image: Ep2CharacterImages.r4p17,
       hero: Ep2CharacterHeroImages.r4p17,
-      position: 35
+      position: 28
     },
     reek: {
       displayName: "Reek",
       key: "reek",
       image: Ep2CharacterImages.reek,
       hero: Ep2CharacterHeroImages.reek,
-      position: 36
+      position: 37
     },
     runehaako: {
       displayName: "Rune",
       key: "runehaako",
       image: Ep2CharacterImages.runehaako,
       hero: Ep2CharacterHeroImages.runehaako,
-      position: 37
+      position: 36
     },
     bail: {
       displayName: "Bail",
       key: "bail",
       image: Ep2CharacterImages.bail,
       hero: Ep2CharacterHeroImages.bail,
-      position: 38
-    },
-    shaak: {
-      displayName: "Shaak",
-      key: "shaak",
-      image: Ep2CharacterImages.shaak,
-      hero: Ep2CharacterHeroImages.shaak,
-      position: 39
+      position: 10
     },
     sheevpalpatine: {
       displayName: "Sheev",
       key: "sheevpalpatine",
       image: Ep2CharacterImages.sheevpalpatine,
       hero: Ep2CharacterHeroImages.sheevpalpatine,
-      position: 40
+      position: 1
     },
     shmi: {
       displayName: "Shmi",
       key: "shmi",
       image: Ep2CharacterImages.shmi,
       hero: Ep2CharacterHeroImages.shmi,
-      position: 41
-    },
-    slymoore: {
-      displayName: "Slymoore",
-      key: "slymoore",
-      image: Ep2CharacterImages.slymoore,
-      hero: Ep2CharacterHeroImages.slymoore,
-      position: 42
+      position: 26
     },
     stormtrooper: {
-      displayName: "Clonetrooper",
+      displayName: "Clones",
       key: "stormtrooper",
       image: Ep2CharacterImages.stormtrooper,
       hero: Ep2CharacterHeroImages.stormtrooper,
-      position: 43
-    },
-    sunfac: {
-      displayName: "Sunfac",
-      key: "sunfac",
-      image: Ep2CharacterImages.sunfac,
-      hero: Ep2CharacterHeroImages.sunfac,
-      position: 44
+      position: 16
     },
     taunwe: {
       displayName: "Taunwe",
       key: "taunwe",
       image: Ep2CharacterImages.taunwe,
       hero: Ep2CharacterHeroImages.taunwe,
-      position: 45
-    },
-    tuskenraider: {
-      displayName: "Raider",
-      key: "tuskenraider",
-      image: Ep2CharacterImages.tuskenraider,
-      hero: Ep2CharacterHeroImages.tuskenraider,
-      position: 46
-    },
-    wattambor: {
-      displayName: "Wat",
-      key: "wattambor",
-      image: Ep2CharacterImages.wattambor,
-      hero: Ep2CharacterHeroImages.wattambor,
-      position: 47
+      position: 22
     },
     watto: {
       displayName: "Watto",
       key: "watto",
       image: Ep2CharacterImages.watto,
       hero: Ep2CharacterHeroImages.watto,
-      position: 48
+      position: 32
     },
     yoda: {
       displayName: "Yoda",
       key: "yoda",
       image: Ep2CharacterImages.yoda,
       hero: Ep2CharacterHeroImages.yoda,
-      position: 49
+      position: 13
     },
     younglings: {
       displayName: "Younglings",
       key: "younglings",
       image: Ep2CharacterImages.younglings,
       hero: Ep2CharacterHeroImages.younglings,
-      position: 50
+      position: 23
     }
   },
   ep3: {
-    aayla: {
-      displayName: "Aaayla Secura",
-      key: "aayla",
-      image: Ep3CharacterImages.aayla,
+    sheevpalpatine: {
+      displayName: "Sheev",
+      key: "sheevpalpatine",
+      image: Ep3CharacterImages.sheevpalpatine,
+      position: 0,
+      hero: Ep3CharacterHeroImages.sheevpalpatine
+    },
+    darthsidious: {
+      displayName: "Sidious",
+      key: "darthsidious",
+      image: Ep3CharacterImages.darthsidious,
       position: 1,
-      hero: Ep3CharacterHeroImages.aayla
+      hero: Ep3CharacterHeroImages.darthsidious
     },
     anakin: {
       displayName: "Anakin",
       key: "anakin",
       image: Ep3CharacterImages.anakin,
-      position: 18,
+      position: 2,
       hero: Ep3CharacterHeroImages.anakin
-    },
-    askaak: {
-      displayName: "Ask Aak",
-      key: "askaak",
-      image: Ep3CharacterImages.askaak,
-      position: 24,
-      hero: Ep3CharacterHeroImages.askaak
-    },
-    bail: {
-      displayName: "Senator Bail Organa",
-      key: "bail",
-      image: Ep3CharacterImages.bail,
-      position: 17,
-      hero: Ep3CharacterHeroImages.bail
-    },
-    battledroid: {
-      displayName: "Battledroid",
-      key: "battledroid",
-      image: Ep3CharacterImages.battledroid,
-      position: 20,
-      hero: Ep3CharacterHeroImages.battledroid
-    },
-    berulars: {
-      displayName: "Beru Whitesun Lars",
-      key: "berulars",
-      image: Ep3CharacterImages.berulars,
-      position: 23,
-      hero: Ep3CharacterHeroImages.berulars
-    },
-    c3po: {
-      displayName: "C-3PO",
-      key: "c3po",
-      image: Ep3CharacterImages.c3po,
-      position: 21,
-      hero: Ep3CharacterHeroImages.c3po
-    },
-    darthsidious: {
-      displayName: "Darthsidious",
-      key: "darthsidious",
-      image: Ep3CharacterImages.darthsidious,
-      position: 8,
-      hero: Ep3CharacterHeroImages.darthsidious
-    },
-    cody: {
-      displayName: "Commander Cody",
-      key: "cody",
-      image: Ep3CharacterImages.cody,
-      position: 6,
-      hero: Ep3CharacterHeroImages.cody
-    },
-    dooku: {
-      displayName: "Count Dooku",
-      key: "dooku",
-      image: Ep3CharacterImages.dooku,
-      position: 27,
-      hero: Ep3CharacterHeroImages.dooku
-    },
-    kiadimundi: {
-      displayName: "Kiadimundi",
-      key: "kiadimundi",
-      image: Ep3CharacterImages.kiadimundi,
-      position: 10,
-      hero: Ep3CharacterHeroImages.kiadimundi
-    },
-    kitfisto: {
-      displayName: "Kit Fisto",
-      key: "kitfisto",
-      image: Ep3CharacterImages.kitfisto,
-      position: 9,
-      hero: Ep3CharacterHeroImages.kitfisto
-    },
-    jarjar: {
-      displayName: "Jarjar",
-      key: "jarjar",
-      image: Ep3CharacterImages.jarjar,
-      position: 26,
-      hero: Ep3CharacterHeroImages.jarjar
-    },
-    lego: {
-      displayName: "Lego",
-      key: "lego",
-      image: Ep3CharacterImages.lego,
-      position: 7,
-      hero: Ep3CharacterHeroImages.lego
-    },
-    siobibble: {
-      displayName: "Governor Sio Bibble",
-      key: "siobibble",
-      image: Ep3CharacterImages.siobibble,
-      position: 13,
-      hero: Ep3CharacterHeroImages.siobibble
-    },
-    macewindu: {
-      displayName: "Macewindu",
-      key: "macewindu",
-      image: Ep3CharacterImages.macewindu,
-      position: 3,
-      hero: Ep3CharacterHeroImages.macewindu
-    },
-    nutegunray: {
-      displayName: "Nutegunray",
-      key: "nutegunray",
-      image: Ep3CharacterImages.nutegunray,
-      position: 4,
-      hero: Ep3CharacterHeroImages.nutegunray
     },
     obiwan: {
       displayName: "Obiwan",
       key: "obiwan",
       image: Ep3CharacterImages.obiwan,
-      position: 2,
+      position: 3,
       hero: Ep3CharacterHeroImages.obiwan
-    },
-    owenlars: {
-      displayName: "Owen Lars",
-      key: "owenlars",
-      image: Ep3CharacterImages.owenlars,
-      position: 16,
-      hero: Ep3CharacterHeroImages.owenlars
     },
     padme: {
       displayName: "Padme",
       key: "padme",
       image: Ep3CharacterImages.padme,
-      position: 19,
+      position: 4,
       hero: Ep3CharacterHeroImages.padme
     },
-    plokoon: {
-      displayName: "Plo Koon",
-      key: "plokoon",
-      image: Ep3CharacterImages.plokoon,
-      position: 14,
-      hero: Ep3CharacterHeroImages.plokoon
-    },
-    poggle: {
-      displayName: "Poggle the lesser",
-      key: "poggle",
-      image: Ep3CharacterImages.poggle,
+    grievous: {
+      displayName: "Grievous",
+      key: "grievous",
+      image: Ep3CharacterImages.grievous,
       position: 5,
-      hero: Ep3CharacterHeroImages.poggle
+      hero: Ep3CharacterHeroImages.grievous
     },
-    r2d2: {
-      displayName: "R2D2",
-      key: "r2d2",
-      image: Ep3CharacterImages.r2d2,
-      position: 25,
-      hero: Ep3CharacterHeroImages.r2d2
+    kiadimundi: {
+      displayName: "Mundi",
+      key: "kiadimundi",
+      image: Ep3CharacterImages.kiadimundi,
+      position: 6,
+      hero: Ep3CharacterHeroImages.kiadimundi
     },
-    r4p17: {
-      displayName: "R4-P17",
-      key: "r4p17",
-      image: Ep3CharacterImages.r4p17,
-      position: 0,
-      hero: Ep3CharacterHeroImages.r4p17
-    },
-    runehaako: {
-      displayName: "Runehaako",
-      key: "runehaako",
-      image: Ep3CharacterImages.runehaako,
-      position: 15,
-      hero: Ep3CharacterHeroImages.runehaako
-    },
-    sheevpalpatine: {
-      displayName: "Sheevpalpatine",
-      key: "sheevpalpatine",
-      image: Ep3CharacterImages.sheevpalpatine,
-      position: 22,
-      hero: Ep3CharacterHeroImages.sheevpalpatine
-    },
-    stormtrooper: {
-      displayName: "Storm Trooper",
-      key: "stormtrooper",
-      image: Ep3CharacterImages.stormtrooper,
-      position: 12,
-      hero: Ep3CharacterHeroImages.stormtrooper
+    dooku: {
+      displayName: "Dooku",
+      key: "dooku",
+      image: Ep3CharacterImages.dooku,
+      position: 7,
+      hero: Ep3CharacterHeroImages.dooku
     },
     yoda: {
       displayName: "Yoda",
       key: "yoda",
       image: Ep3CharacterImages.yoda,
-      position: 11,
+      position: 8,
       hero: Ep3CharacterHeroImages.yoda
     },
-    younglings: {
-      displayName: "Younglings",
-      key: "younglings",
-      image: Ep3CharacterImages.younglings,
-      position: 15,
-      hero: Ep3CharacterHeroImages.younglings
+    macewindu: {
+      displayName: "Mace",
+      key: "macewindu",
+      image: Ep3CharacterImages.macewindu,
+      position: 9,
+      hero: Ep3CharacterHeroImages.macewindu
     },
-    grievous: {
-      displayName: "General Grievous",
-      key: "grievous",
-      image: Ep3CharacterImages.grievous,
-      position: 22,
-      hero: Ep3CharacterHeroImages.grievous
-    },
-    medon: {
-      displayName: "Tion Medon",
-      key: "medon",
-      image: Ep3CharacterImages.medon,
-      position: 12,
-      hero: Ep3CharacterHeroImages.medon
-    },
-    slymoore: {
-      displayName: "Sly Moore",
-      key: "slymoore",
-      image: Ep3CharacterImages.slymoore,
-      position: 11,
-      hero: Ep3CharacterHeroImages.slymoore
+    vader: {
+      displayName: "Vader",
+      key: "vader",
+      image: Ep3CharacterImages.vader,
+      position: 10,
+      hero: Ep3CharacterHeroImages.vader
     },
     wookies: {
       displayName: "Wookies",
@@ -794,6 +556,132 @@ const characterMaster = {
       image: Ep3CharacterImages.wookies,
       position: 11,
       hero: Ep3CharacterHeroImages.wookies
+    },
+    nutegunray: {
+      displayName: "Nute",
+      key: "nutegunray",
+      image: Ep3CharacterImages.nutegunray,
+      position: 12,
+      hero: Ep3CharacterHeroImages.nutegunray
+    },
+    runehaako: {
+      displayName: "Rune",
+      key: "runehaako",
+      image: Ep3CharacterImages.runehaako,
+      position: 13,
+      hero: Ep3CharacterHeroImages.runehaako
+    },
+    bail: {
+      displayName: "Bail",
+      key: "bail",
+      image: Ep3CharacterImages.bail,
+      position: 14,
+      hero: Ep3CharacterHeroImages.bail
+    },
+    r2d2: {
+      displayName: "R2D2",
+      key: "r2d2",
+      image: Ep3CharacterImages.r2d2,
+      position: 15,
+      hero: Ep3CharacterHeroImages.r2d2
+    },
+    c3po: {
+      displayName: "C3PO",
+      key: "c3po",
+      image: Ep3CharacterImages.c3po,
+      position: 16,
+      hero: Ep3CharacterHeroImages.c3po
+    },
+    battledroid: {
+      displayName: "Droids",
+      key: "battledroid",
+      image: Ep3CharacterImages.battledroid,
+      position: 17,
+      hero: Ep3CharacterHeroImages.battledroid
+    },
+    lego: {
+      displayName: "Random",
+      key: "lego",
+      image: Ep3CharacterImages.lego,
+      position: 18,
+      hero: Ep3CharacterHeroImages.lego
+    },
+    stormtrooper: {
+      displayName: "Clones",
+      key: "stormtrooper",
+      image: Ep3CharacterImages.stormtrooper,
+      position: 19,
+      hero: Ep3CharacterHeroImages.stormtrooper
+    },
+    berulars: {
+      displayName: "Beru",
+      key: "berulars",
+      image: Ep3CharacterImages.berulars,
+      position: 20,
+      hero: Ep3CharacterHeroImages.berulars
+    },
+    owenlars: {
+      displayName: "Owen",
+      key: "owenlars",
+      image: Ep3CharacterImages.owenlars,
+      position: 21,
+      hero: Ep3CharacterHeroImages.owenlars
+    },
+    masamedda: {
+      displayName: "Mas",
+      key: "masamedda",
+      image: Ep3CharacterImages.masamedda,
+      position: 22,
+      hero: Ep3CharacterHeroImages.masamedda
+    },
+    younglings: {
+      displayName: "Younglings",
+      key: "younglings",
+      image: Ep3CharacterImages.younglings,
+      position: 23,
+      hero: Ep3CharacterHeroImages.younglings
+    },
+    kitfisto: {
+      displayName: "Fisto",
+      key: "kitfisto",
+      image: Ep3CharacterImages.kitfisto,
+      position: 24,
+      hero: Ep3CharacterHeroImages.kitfisto
+    },
+    aayla: {
+      displayName: "Aayla",
+      key: "aayla",
+      image: Ep3CharacterImages.aayla,
+      position: 25,
+      hero: Ep3CharacterHeroImages.aayla
+    },
+    r4p17: {
+      displayName: "R4P17",
+      key: "r4p17",
+      image: Ep3CharacterImages.r4p17,
+      position: 26,
+      hero: Ep3CharacterHeroImages.r4p17
+    },
+    slymoore: {
+      displayName: "Sly",
+      key: "slymoore",
+      image: Ep3CharacterImages.slymoore,
+      position: 27,
+      hero: Ep3CharacterHeroImages.slymoore
+    },
+    plokoon: {
+      displayName: "Plo",
+      key: "plokoon",
+      image: Ep3CharacterImages.plokoon,
+      position: 28,
+      hero: Ep3CharacterHeroImages.plokoon
+    },
+    jarjar: {
+      displayName: "Jarjar",
+      key: "jarjar",
+      image: Ep3CharacterImages.jarjar,
+      position: 29,
+      hero: Ep3CharacterHeroImages.jarjar
     }
   }
 };
