@@ -12,6 +12,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
 import { addMeme } from "../Home/ducks";
+import ImagesLoaded from "react-images-loaded";
 
 class MemeMaker extends Component {
   state = {
@@ -135,141 +136,152 @@ class MemeMaker extends Component {
   };
 
   render() {
+    const hiddenStyle = { height: 0, overflow: "hidden" };
     return (
-      <div className="meme-maker">
-        <Header title="Create Meme" />
-        {this.state.image ? (
-          <div className="rendered">
-            <img src={this.state.image} className="meme-image " alt="" />
-            <CopyToClipboard
-              className="copy-to-clipboard"
-              text={this.state.image}
-              onCopy={this.copyToClipboardEvent}
-            >
-              <div>
-                <FontAwesome
-                  className="clipboard-icon"
-                  name="link"
-                  size="2x"
-                  flip="horizontal"
-                />
-                {this.state.copied ? (
-                  <FontAwesome
-                    className="copy-text"
-                    name="check-circle"
-                    size="2x"
-                  />
-                ) : (
-                  <p className="copy-text">Copy Link</p>
-                )}
+      <div>
+        <div
+          className="meme-maker"
+          style={this.state.loaded ? null : hiddenStyle}
+        >
+          <Header title="Create Meme" />
+          <ImagesLoaded done={() => this.setState({ loaded: true })}>
+            {this.state.image ? (
+              <div className="rendered">
+                <img src={this.state.image} className="meme-image " alt="" />
+                <CopyToClipboard
+                  className="copy-to-clipboard"
+                  text={this.state.image}
+                  onCopy={this.copyToClipboardEvent}
+                >
+                  <div>
+                    <FontAwesome
+                      className="clipboard-icon"
+                      name="link"
+                      size="2x"
+                      flip="horizontal"
+                    />
+                    {this.state.copied ? (
+                      <FontAwesome
+                        className="copy-text"
+                        name="check-circle"
+                        size="2x"
+                      />
+                    ) : (
+                      <p className="copy-text">Copy Link</p>
+                    )}
+                  </div>
+                </CopyToClipboard>
               </div>
-            </CopyToClipboard>
-          </div>
-        ) : (
-          <div className="single-meme-form">
-            {this.state.hasImageLoaded ? (
-              <span className="input-block">
-                <input
-                  className="input-top-text"
-                  type="text"
-                  name="topText"
-                  placeholder="tap to add caption"
-                  maxLength={globalVariables.characterLimit}
-                  autoComplete="off"
-                  ref={input => {
-                    this.topTextInput = input;
+            ) : (
+              <div className="single-meme-form">
+                {this.state.hasImageLoaded ? (
+                  <span className="input-block">
+                    <input
+                      className="input-top-text"
+                      type="text"
+                      name="topText"
+                      placeholder="tap to add caption"
+                      maxLength={globalVariables.characterLimit}
+                      autoComplete="off"
+                      ref={input => {
+                        this.topTextInput = input;
+                      }}
+                    />
+                  </span>
+                ) : null}
+
+                <img
+                  onContextMenu={this.contextMenu}
+                  src={
+                    "https://prequelmemes.s3.amazonaws.com/" +
+                    this.props.match.params.url
+                  }
+                  className="meme-image"
+                  alt=""
+                  onLoad={() => {
+                    this.imageLoaded();
                   }}
                 />
-              </span>
-            ) : null}
 
-            <img
-              onContextMenu={this.contextMenu}
-              src={
-                "https://prequelmemes.s3.amazonaws.com/" +
-                this.props.match.params.url
-              }
-              className="meme-image"
-              alt=""
-              onLoad={() => {
-                this.imageLoaded();
+                {this.state.hasImageLoaded ? (
+                  <span className="input-block">
+                    <input
+                      className="input-bottom-text"
+                      type="text"
+                      name="bottomText"
+                      placeholder="tap to add caption"
+                      maxLength={globalVariables.characterLimit}
+                      autoComplete="off"
+                      ref={input => {
+                        this.bottomTextInput = input;
+                      }}
+                    />
+                  </span>
+                ) : null}
+
+                <span className="input-block">
+                  <Ripples color="rgba(255,255,255,0.3)">
+                    <button
+                      className="create-meme"
+                      onClick={() => this.createMemeEvent()}
+                    >
+                      {" "}
+                      {this.state.loading ? (
+                        <Loader type="line-scale" active />
+                      ) : (
+                        "Create Meme"
+                      )}
+                    </button>
+                  </Ripples>
+                </span>
+
+                <span className="input-block">
+                  <Ripples color="rgba(47,128,237,0.3)">
+                    <button
+                      className="add-button"
+                      onClick={() => this.addToStripEvent()}
+                    >
+                      {this.state.hasAddedToMultiMeme ? (
+                        <FontAwesome name="check-circle" size="2x" />
+                      ) : (
+                        "Add to Strip"
+                      )}
+                    </button>
+                  </Ripples>
+                </span>
+                <MuiThemeProvider>
+                  <Snackbar
+                    open={this.state.open}
+                    contentStyle={{
+                      color: "rgb(255, 64, 129)"
+                    }}
+                    message={
+                      this.props.memes.length < globalVariables.maxMemeAmount
+                        ? "Image added to Meme Strip"
+                        : "Meme Strip is full"
+                    }
+                    autoHideDuration={4000}
+                    onRequestClose={this.handleRequestClose}
+                  />
+                </MuiThemeProvider>
+              </div>
+            )}
+          </ImagesLoaded>
+          <MuiThemeProvider>
+            <Snackbar
+              open={this.state.copied}
+              contentStyle={{
+                color: "rgb(255, 64, 129)"
               }}
+              message="Link copied to your clipboard!"
+              autoHideDuration={4000}
+              onRequestClose={this.handleClipboardClose}
             />
-
-            {this.state.hasImageLoaded ? (
-              <span className="input-block">
-                <input
-                  className="input-bottom-text"
-                  type="text"
-                  name="bottomText"
-                  placeholder="tap to add caption"
-                  maxLength={globalVariables.characterLimit}
-                  autoComplete="off"
-                  ref={input => {
-                    this.bottomTextInput = input;
-                  }}
-                />
-              </span>
-            ) : null}
-
-            <span className="input-block">
-              <Ripples color="rgba(255,255,255,0.3)">
-                <button
-                  className="create-meme"
-                  onClick={() => this.createMemeEvent()}
-                >
-                  {" "}
-                  {this.state.loading ? (
-                    <Loader type="line-scale" active />
-                  ) : (
-                    "Create Meme"
-                  )}
-                </button>
-              </Ripples>
-            </span>
-
-            <span className="input-block">
-              <Ripples color="rgba(47,128,237,0.3)">
-                <button
-                  className="add-button"
-                  onClick={() => this.addToStripEvent()}
-                >
-                  {this.state.hasAddedToMultiMeme ? (
-                    <FontAwesome name="check-circle" size="2x" />
-                  ) : (
-                    "Add to Strip"
-                  )}
-                </button>
-              </Ripples>
-            </span>
-            <MuiThemeProvider>
-              <Snackbar
-                open={this.state.open}
-                contentStyle={{
-                  color: "rgb(255, 64, 129)"
-                }}
-                message={
-                  this.props.memes.length < globalVariables.maxMemeAmount
-                    ? "Image added to Meme Strip"
-                    : "Meme Strip is full"
-                }
-                autoHideDuration={4000}
-                onRequestClose={this.handleRequestClose}
-              />
-            </MuiThemeProvider>
-          </div>
+          </MuiThemeProvider>
+        </div>
+        {this.state.loaded ? null : (
+          <Loader className="center" type="line-scale" active color="#bf9800" />
         )}
-        <MuiThemeProvider>
-          <Snackbar
-            open={this.state.copied}
-            contentStyle={{
-              color: "rgb(255, 64, 129)"
-            }}
-            message="Link copied to your clipboard!"
-            autoHideDuration={4000}
-            onRequestClose={this.handleClipboardClose}
-          />
-        </MuiThemeProvider>
       </div>
     );
   }
