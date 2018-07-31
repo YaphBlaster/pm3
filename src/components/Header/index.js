@@ -17,6 +17,18 @@ const Header = props => {
     });
   };
 
+  const backButtonEvent = () => {
+    console.log("hello");
+    ReactGA.event({
+      category: "Back",
+      action: "Back Button Clicked",
+      label: "Back Button Usage",
+      value: 1
+    });
+
+    window.history.back();
+  };
+
   return (
     <div
       className={props.hideBackButton ? "main-menu-header-bar" : "header-bar"}
@@ -26,7 +38,7 @@ const Header = props => {
         name="angle-left"
         size="2x"
         style={{ marginTop: "10px" }}
-        onClick={() => window.history.back()}
+        onClick={backButtonEvent}
       />
 
       <Link to="/" className={props.hideBackButton ? "hidden" : "name-text"}>
