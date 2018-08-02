@@ -204,7 +204,6 @@ class MultiMemeMaker extends Component {
           console.log(error);
         });
     }
-    this.setState(this.state);
   };
 
   createMemeStripEvent = () => {

@@ -139,11 +139,11 @@ class MemeMaker extends Component {
     const hiddenStyle = { height: 0, overflow: "hidden" };
     return (
       <div>
+        <Header title="Create Meme" />
         <div
           className="meme-maker"
           style={this.state.loaded ? null : hiddenStyle}
         >
-          <Header title="Create Meme" />
           <ImagesLoaded done={() => this.setState({ loaded: true })}>
             {this.state.image ? (
               <div className="rendered">

@@ -243,6 +243,9 @@ a {
 .spacer {
   margin-bottom: 100px; }
 
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"), url(./Hack-BoldOblique.ttf) format("truetype"); }
 .wrapper {
   margin-top: 0px;
   text-align: center;
@@ -304,11 +307,11 @@ input[type="text"] {
   /* border-radius: 4px; */
   box-sizing: border-box;
   transform: translate(-50%, -50%);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "MyFont";
   background-color: rgba(0, 0, 0, 0);
   color: white;
   text-align: center;
-  font-size: 16px;
+  font-size: 19px;
   color: yellow;
   font-style: italic;
   text-shadow: 2px 2px #000;
