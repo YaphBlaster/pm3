@@ -24,6 +24,7 @@
 
 .input-block {
   display: block;
+  width: 100%;
 }
 
 .home-wrapper {
@@ -73,7 +74,7 @@ body {
 input[type="text"] {
   max-width: 800px;
   padding: 12px 20px;
-  border: dashed;
+  border: none;
   border-color: rgba(255, 255, 255, 0.6);
   /* border-radius: 4px; */
   box-sizing: border-box;
@@ -227,8 +228,8 @@ div.copy-to-clipboard {
 
 .badge {
   position: relative;
-  margin: 0 0px 26px -6px;
-  padding: 0 !important;
+  top: -60px;
+  left: 4px;
 }
 
 .move-button {

@@ -37,7 +37,7 @@ class ThumbnailGrid extends Component {
       .then(response => {
         let responseTemp;
         responseTemp = response.data;
-        nextSkipBy += 50;
+        nextSkipBy += 200;
         this.setState({
           isInitial: false
         });
@@ -57,7 +57,7 @@ class ThumbnailGrid extends Component {
           isLoading: false
         }));
 
-        if (index !== 50 && !this.state.isInitial) {
+        if (index !== 200 && !this.state.isInitial) {
           this.setState({
             hasMoreThumbnails: false
           });

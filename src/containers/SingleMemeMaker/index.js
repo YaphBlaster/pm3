@@ -180,7 +180,7 @@ class MemeMaker extends Component {
                       className="input-top-text"
                       type="text"
                       name="topText"
-                      placeholder="tap to add caption"
+                      placeholder="TAP TO ADD CAPTION"
                       maxLength={globalVariables.characterLimit}
                       autoComplete="off"
                       ref={input => {
@@ -209,7 +209,7 @@ class MemeMaker extends Component {
                       className="input-bottom-text"
                       type="text"
                       name="bottomText"
-                      placeholder="tap to add caption"
+                      placeholder="TAP TO ADD CAPTION"
                       maxLength={globalVariables.characterLimit}
                       autoComplete="off"
                       ref={input => {

@@ -71,7 +71,7 @@ class StripMeme extends Component {
               className="input-bottom-text"
               type="text"
               name="bottomText"
-              placeholder="tap to add caption"
+              placeholder="TAP TO ADD CAPTION"
               maxLength={globalVariables.characterLimit}
               autoComplete="off"
               value={this.getTextValue()}
