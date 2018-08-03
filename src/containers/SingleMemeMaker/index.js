@@ -139,11 +139,11 @@ class MemeMaker extends Component {
     const hiddenStyle = { height: 0, overflow: "hidden" };
     return (
       <div>
+        <Header title="Create Meme" />
         <div
           className="meme-maker"
           style={this.state.loaded ? null : hiddenStyle}
         >
-          <Header title="Create Meme" />
           <ImagesLoaded done={() => this.setState({ loaded: true })}>
             {this.state.image ? (
               <div className="rendered">
@@ -180,7 +180,7 @@ class MemeMaker extends Component {
                       className="input-top-text"
                       type="text"
                       name="topText"
-                      placeholder="tap to add caption"
+                      placeholder="TAP TO ADD CAPTION"
                       maxLength={globalVariables.characterLimit}
                       autoComplete="off"
                       ref={input => {
@@ -209,7 +209,7 @@ class MemeMaker extends Component {
                       className="input-bottom-text"
                       type="text"
                       name="bottomText"
-                      placeholder="tap to add caption"
+                      placeholder="TAP TO ADD CAPTION"
                       maxLength={globalVariables.characterLimit}
                       autoComplete="off"
                       ref={input => {

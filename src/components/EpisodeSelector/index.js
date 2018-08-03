@@ -7,40 +7,38 @@ import PropTypes from "prop-types";
 class EpisodeSelector extends Component {
   render() {
     return (
-      <div>
-        <div className="navigation-bar">
-          <div className="navigation-tab">
-            <button
-              className={
-                this.props.episode === 0
-                  ? "navigation-button active"
-                  : "navigation-button"
-              }
-              onClick={() => this.props.changeEpTo(0)}
-            >
-              I
-            </button>
-            <button
-              className={
-                this.props.episode === 1
-                  ? "navigation-button active"
-                  : "navigation-button"
-              }
-              onClick={() => this.props.changeEpTo(1)}
-            >
-              II
-            </button>{" "}
-            <button
-              className={
-                this.props.episode === 2
-                  ? "navigation-button active"
-                  : "navigation-button"
-              }
-              onClick={() => this.props.changeEpTo(2)}
-            >
-              III
-            </button>
-          </div>
+      <div className="navigation-bar">
+        <div className="navigation-tab">
+          <button
+            className={
+              this.props.episode === 0
+                ? "navigation-button active"
+                : "navigation-button"
+            }
+            onClick={() => this.props.changeEpTo(0)}
+          >
+            I
+          </button>
+          <button
+            className={
+              this.props.episode === 1
+                ? "navigation-button active"
+                : "navigation-button"
+            }
+            onClick={() => this.props.changeEpTo(1)}
+          >
+            II
+          </button>{" "}
+          <button
+            className={
+              this.props.episode === 2
+                ? "navigation-button active"
+                : "navigation-button"
+            }
+            onClick={() => this.props.changeEpTo(2)}
+          >
+            III
+          </button>
         </div>
       </div>
     );

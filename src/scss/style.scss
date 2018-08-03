@@ -3,6 +3,11 @@
   "./partials/episodeSelector.scss", "./partials/header.scss",
   "./partials/stripMeme.scss", "./partials/thumbnailGrid.scss";
 
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"), url(./Hack-BoldOblique.ttf) format("truetype");
+}
+
 .wrapper {
   margin-top: 0px;
   text-align: center;
@@ -19,6 +24,7 @@
 
 .input-block {
   display: block;
+  width: 100%;
 }
 
 .home-wrapper {
@@ -68,26 +74,37 @@ body {
 input[type="text"] {
   max-width: 800px;
   padding: 12px 20px;
-  border: dashed;
+  border: none;
   border-color: rgba(255, 255, 255, 0.6);
   /* border-radius: 4px; */
   box-sizing: border-box;
   transform: translate(-50%, -50%);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "MyFont";
   background-color: rgba(0, 0, 0, 0);
   color: white;
   text-align: center;
-  font-size: 16px;
+  font-size: 19px;
   color: yellow;
   font-style: italic;
   text-shadow: 2px 2px #000;
   font-weight: bold;
+  @media (max-width: 360px) and (min-width: 0) {
+    font-size: 8px;
+  }
+  @media (max-width: 500px) and (min-width: 361px) {
+    font-size: 10px;
+  }
+  @media (max-width: 650) and (min-width: 550px) {
+    font-size: 15px;
+  }
+  @media (max-width: 800px) and (min-width: 800px) {
+    font-size: 20px;
+  }
 }
 
 .meme-image {
   width: 100%;
   -webkit-touch-callout: none;
-  /* margin-bottom: 30px; */
 }
 
 .rendered {
@@ -211,8 +228,8 @@ div.copy-to-clipboard {
 
 .badge {
   position: relative;
-  margin: 0 0px 26px -6px;
-  padding: 0 !important;
+  top: -60px;
+  left: 4px;
 }
 
 .move-button {
