@@ -44,23 +44,24 @@ const Header = props => {
       <Link to="/" className={props.hideBackButton ? "hidden" : "name-text"}>
         {props.title ? props.title : null}
       </Link>
-      <Link to="/createStrip" className="action-button" onClick={openCartEvent}>
-        <FontAwesome
-          className="back-button"
-          name="film"
-          size="lg"
-          style={{ marginTop: "10px" }}
-        />
-        <MuiThemeProvider>
-          {props.memes.length > 0 ? (
-            <Badge
-              badgeContent={props.memes.length}
-              secondary={true}
-              className="badge"
-            />
-          ) : null}
-        </MuiThemeProvider>
-      </Link>
+      <span>
+        <Link
+          to="/createStrip"
+          className="action-button"
+          onClick={openCartEvent}
+        >
+          <FontAwesome className="back-button" name="film" size="lg" />
+          <MuiThemeProvider>
+            {props.memes.length > 0 ? (
+              <Badge
+                badgeContent={props.memes.length}
+                secondary={true}
+                className="badge"
+              />
+            ) : null}
+          </MuiThemeProvider>
+        </Link>
+      </span>
     </div>
   );
 };
