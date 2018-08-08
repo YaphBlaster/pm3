@@ -551,7 +551,7 @@ const characterMaster = {
       hero: Ep3CharacterHeroImages.vader
     },
     wookies: {
-      displayName: "Wookies",
+      displayName: "Wookiees",
       key: "wookies",
       image: Ep3CharacterImages.wookies,
       position: 11,
