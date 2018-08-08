@@ -169,7 +169,7 @@ const characterMaster = {
       hero: Ep1CharacterHeroImages.sebulba
     },
     sheevpalpatine: {
-      displayName: "Sheev",
+      displayName: "Senate",
       key: "sheevpalpatine",
       image: Ep1CharacterImages.sheevpalpatine,
       position: 0,
@@ -423,7 +423,7 @@ const characterMaster = {
       position: 10
     },
     sheevpalpatine: {
-      displayName: "Sheev",
+      displayName: "Senate",
       key: "sheevpalpatine",
       image: Ep2CharacterImages.sheevpalpatine,
       hero: Ep2CharacterHeroImages.sheevpalpatine,
@@ -474,7 +474,7 @@ const characterMaster = {
   },
   ep3: {
     sheevpalpatine: {
-      displayName: "Sheev",
+      displayName: "Senate",
       key: "sheevpalpatine",
       image: Ep3CharacterImages.sheevpalpatine,
       position: 0,
