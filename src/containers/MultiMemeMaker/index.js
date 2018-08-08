@@ -156,7 +156,7 @@ class MultiMemeMaker extends Component {
       loading: true
     });
 
-    if (memeImages.length > 1) {
+    if (this.props.memes.length > 1) {
       axios(`${globalVariables.endpoint}makemultimeme`, {
         method: "POST",
         data: {
@@ -179,7 +179,9 @@ class MultiMemeMaker extends Component {
           console.log("ERROR::", error.data);
         });
     } else {
-      const makeMemeUrl = `${globalVariables.endpoint}makememe?url=`;
+      const makeMemeUrl = `${globalVariables.endpoint}makememe?url=${
+        document.querySelectorAll(".meme-image")[0].src
+      }`;
       axios
         .get(`${makeMemeUrl}&topText=&bottomText=${memeInputs[0].value}`)
         .then(response => {
