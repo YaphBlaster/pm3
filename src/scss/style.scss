@@ -227,9 +227,9 @@ div.copy-to-clipboard {
 }
 
 .badge {
-  position: absolute !important;
-  right: 5px;
-  top: 10px;
+  position: relative;
+  top: -60px;
+  left: 4px;
 }
 
 .move-button {
