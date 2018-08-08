@@ -438,9 +438,9 @@ div.copy-to-clipboard {
   margin-top: -20px; }
 
 .badge {
-  position: relative;
-  top: -60px;
-  left: 4px; }
+  position: absolute !important;
+  top: 5px;
+  right: 7px; }
 
 .move-button {
   margin-top: 20px;
