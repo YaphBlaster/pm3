@@ -304,7 +304,7 @@ const characterMaster = {
       position: 12
     },
     jedis: {
-      displayName: "Jedis",
+      displayName: "Jedi",
       key: "jedis",
       image: Ep2CharacterImages.jedis,
       hero: Ep2CharacterHeroImages.jedis,

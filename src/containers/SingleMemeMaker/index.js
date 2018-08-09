@@ -20,8 +20,7 @@ class MemeMaker extends Component {
     image: null,
     open: false,
     copied: false,
-    hasImageLoaded: false,
-    blank: false
+    hasImageLoaded: false
   };
 
   componentWillMount() {
@@ -111,16 +110,7 @@ class MemeMaker extends Component {
   };
 
   createMemeEvent = () => {
-    if (
-      this.topTextInput.value.trim().length == 0 &&
-      this.bottomTextInput.value.trim().length == 0
-    ) {
-      this.setState({
-        blank: true
-      });
-    } else {
-      this.fetchRequest();
-    }
+    this.fetchRequest();
     ReactGA.event({
       category: "Meme",
       action: "Created Single Meme",
@@ -155,28 +145,12 @@ class MemeMaker extends Component {
           style={this.state.loaded ? null : hiddenStyle}
         >
           <ImagesLoaded done={() => this.setState({ loaded: true })}>
-            {this.state.image || this.state.blank ? (
+            {this.state.image ? (
               <div className="rendered">
-                <img
-                  src={
-                    this.state.blank
-                      ? `https://prequelmemes.s3.amazonaws.com/${
-                          this.props.match.params.url
-                        }`
-                      : this.state.image
-                  }
-                  className="meme-image "
-                  alt=""
-                />
+                <img src={this.state.image} className="meme-image " alt="" />
                 <CopyToClipboard
                   className="copy-to-clipboard"
-                  text={
-                    this.state.blank
-                      ? `https://prequelmemes.s3.amazonaws.com/${
-                          this.props.match.params.url
-                        }`
-                      : this.state.image
-                  }
+                  text={this.state.image}
                   onCopy={this.copyToClipboardEvent}
                 >
                   <div>
