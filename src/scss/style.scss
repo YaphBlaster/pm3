@@ -272,3 +272,38 @@ span {
     right: 0;
   }
 }
+
+.construction-message {
+  color: white;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.construction-image-container {
+  position: relative;
+}
+
+.construction-image-overlay {
+  position: absolute;
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  left: 30%;
+  top: 30%;
+  @media (max-width: 360px) and (min-width: 0) {
+    font-size: 15px;
+  }
+  @media (max-width: 500px) and (min-width: 361px) {
+    font-size: 20px;
+  }
+  @media (max-width: 650) and (min-width: 550px) {
+    font-size: 25px;
+  }
+}
