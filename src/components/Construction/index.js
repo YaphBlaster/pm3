@@ -6,7 +6,8 @@ const Construction = () => {
     <div>
       <h1 className="construction-message">
         Imgur is currently experiencing some technical difficulties with image
-        uploads.
+        uploads. The status can be viewed{" "}
+        <a href="http://status.imgur.com/"> here</a>
         <br />
         <p>Prequel Memes will be back as soon as these issues are resolved!</p>
         <div className="construction-image-container">
