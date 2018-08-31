@@ -5,7 +5,6 @@ import "./css/style.css";
 import ThumbChooser from "./containers/ThumbChooser";
 import SingleMemeMaker from "./containers/SingleMemeMaker";
 import MultiMemeMaker from "./containers/MultiMemeMaker";
-import Construction from "./components/Construction";
 import "loaders.css";
 import ReactGA from "react-ga";
 import WithTracker from "./containers/WithTracker";
@@ -27,14 +26,13 @@ class App extends Component {
     return (
       <Router>
         <div className="wrapper ">
-          <Route exact path="/" component={WithTracker(Construction)} />
-          {/* <Route exact path="/" component={WithTracker(Home)} />
+          <Route exact path="/" component={WithTracker(Home)} />
           <Route path="/:ep/:tag/:name" component={WithTracker(ThumbChooser)} />
           <Route
             path="/createMeme/:url"
             component={WithTracker(SingleMemeMaker)}
           />
-          <Route path="/createStrip" component={WithTracker(MultiMemeMaker)} /> */}
+          <Route path="/createStrip" component={WithTracker(MultiMemeMaker)} />
         </div>
       </Router>
     );
