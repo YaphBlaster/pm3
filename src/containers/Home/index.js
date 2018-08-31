@@ -10,6 +10,7 @@ import { logo as movieLogo1 } from "../../assets/episode1/Logo";
 import { logo as movieLogo2 } from "../../assets/episode2/Logo";
 import { logo as movieLogo3 } from "../../assets/episode3/Logo";
 import Header from "../../components/Header";
+import { debounce } from "debounce";
 
 const BindKeyboardSwipeableViews = bindKeyboard(SwipeableViews);
 
@@ -18,6 +19,15 @@ class Home extends Component {
 
   handleChangeIndex = index => {
     this.props.changeEpTo(index);
+  };
+
+  componentDidMount() {
+    window.onresize = debounce(() => this.swipeableActions.updateHeight(), 200);
+  }
+
+  resize = e => {
+    console.log("height", window.innerHeight);
+    console.log("width", window.innerWidth);
   };
 
   render() {
