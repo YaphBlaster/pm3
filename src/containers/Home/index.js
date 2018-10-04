@@ -25,11 +25,6 @@ class Home extends Component {
     window.onresize = debounce(() => this.swipeableActions.updateHeight(), 200);
   }
 
-  resize = e => {
-    console.log("height", window.innerHeight);
-    console.log("width", window.innerWidth);
-  };
-
   render() {
     return (
       <div>
