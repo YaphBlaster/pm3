@@ -31,6 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lt.surge": "react-scripts build && surge --domain www.prequelmemes.com ./build && surge --domain prequelmemes.com ./build",
+    "sassy": "sass --watch ./src/scss:./src/css"
   }
 }
