@@ -1,0 +1,61 @@
+.meme-modal {
+  background-color: #312d2d !important;
+}
+
+.modal-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  h2 {
+    margin: 5px;
+  }
+  .modal-title {
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .modal-subtitle {
+    font-weight: 200;
+    font-size: 16px;
+  }
+}
+
+.modal-buttons {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+  }
+  button {
+    width: 195px;
+    height: 55px;
+    color: white;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    border: none;
+    margin: 10px;
+  }
+
+  .modal-button-confirm {
+    background-color: #2f7adf;
+
+    color: white;
+  }
+
+  .modal-button-cancel {
+    background-color: #312d2d;
+    border: #2f7adf solid 1px;
+    color: #2f7adf;
+  }
+}
+
+.modal-button-close {
+  fill: white !important;
+}
