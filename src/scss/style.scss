@@ -1,7 +1,7 @@
-@import "./partials/characterGrid.scss", "./partials/characterHeroImage.scss",
-  "./partials/characterRegular.scss", "./partials/episodeLogo.scss",
-  "./partials/episodeSelector.scss", "./partials/header.scss",
-  "./partials/stripMeme.scss", "./partials/thumbnailGrid.scss";
+@import "./partials/characterGrid", "./partials/characterHeroImage",
+  "./partials/characterRegular", "./partials/episodeLogo",
+  "./partials/episodeSelector", "./partials/header", "./partials/stripMeme",
+  "./partials/thumbnailGrid", "./partials/memeModal";
 
 @font-face {
   font-family: "MyFont";

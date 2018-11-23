@@ -244,6 +244,53 @@ a {
 .spacer {
   margin-bottom: 100px; }
 
+.meme-modal {
+  background-color: #312d2d !important; }
+
+.modal-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; }
+  .modal-text-container h2 {
+    margin: 5px; }
+  .modal-text-container .modal-title {
+    color: white;
+    font-weight: 400;
+    font-size: 20px; }
+  .modal-text-container .modal-subtitle {
+    font-weight: 200;
+    font-size: 16px; }
+
+.modal-buttons {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media screen and (max-width: 550px) {
+    .modal-buttons {
+      flex-direction: column; } }
+  .modal-buttons button {
+    width: 195px;
+    height: 55px;
+    color: white;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    border: none;
+    margin: 10px; }
+  .modal-buttons .modal-button-confirm {
+    background-color: #2f7adf;
+    color: white; }
+  .modal-buttons .modal-button-cancel {
+    background-color: #312d2d;
+    border: #2f7adf solid 1px;
+    color: #2f7adf; }
+
+.modal-button-close {
+  fill: white !important; }
+
 @font-face {
   font-family: "MyFont";
   src: local("MyFont"), url(./Hack-BoldOblique.ttf) format("truetype"); }
