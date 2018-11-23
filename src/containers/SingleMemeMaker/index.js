@@ -13,6 +13,7 @@ import globalVariables from "../../data/GlobalVariables";
 import { connect } from "react-redux";
 import { addMeme } from "../Home/ducks";
 import ImagesLoaded from "react-images-loaded";
+import MemeModal from "../../components/MemeModal";
 
 class MemeMaker extends Component {
   state = {
@@ -20,7 +21,8 @@ class MemeMaker extends Component {
     image: null,
     open: false,
     copied: false,
-    hasImageLoaded: false
+    hasImageLoaded: false,
+    openModal: false
   };
 
   componentWillMount() {
@@ -55,7 +57,8 @@ class MemeMaker extends Component {
 
   fetchRequest = () => {
     this.setState({
-      loading: true
+      loading: true,
+      openModal: false
     });
     let makeMemeUrl = `${
       globalVariables.endpoint
@@ -133,6 +136,22 @@ class MemeMaker extends Component {
     this.setState({
       hasImageLoaded: true
     });
+  };
+
+  openModal = () => {
+    this.setState({
+      openModal: true
+    });
+  };
+
+  onCloseModal = () => {
+    this.setState({
+      openModal: false
+    });
+  };
+
+  modalTest = () => {
+    console.log("modal confirmed");
   };
 
   render() {
@@ -219,11 +238,17 @@ class MemeMaker extends Component {
                   </span>
                 ) : null}
 
+                <MemeModal
+                  openModal={this.state.openModal}
+                  closeEvent={this.onCloseModal}
+                  confirmEvent={this.createMemeEvent}
+                />
+
                 <span className="input-block">
                   <Ripples color="rgba(255,255,255,0.3)">
                     <button
                       className="create-meme"
-                      onClick={() => this.createMemeEvent()}
+                      onClick={() => this.openModal()}
                     >
                       {" "}
                       {this.state.loading ? (

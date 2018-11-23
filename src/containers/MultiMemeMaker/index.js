@@ -27,6 +27,7 @@ import {
   removeMeme,
   moveMeme
 } from "../Home/ducks";
+import MemeModal from "../../components/MemeModal";
 
 const DragHandle = SortableHandle(() => (
   <FontAwesome className="move-button" name="arrows" size="2x" />
@@ -53,7 +54,8 @@ class MultiMemeMaker extends Component {
   state = {
     image: null,
     items: [],
-    copied: false
+    copied: false,
+    openModal: false
   };
 
   componentWillMount() {
@@ -153,7 +155,8 @@ class MultiMemeMaker extends Component {
     }
 
     this.setState({
-      loading: true
+      loading: true,
+      openModal: false
     });
 
     if (this.props.memes.length > 1) {
@@ -172,8 +175,7 @@ class MultiMemeMaker extends Component {
         .then(response => {
           document.getElementsByClassName(
             "sharethis-inline-share-buttons"
-          )[0].style.opacity =
-            "1";
+          )[0].style.opacity = "1";
         })
         .catch(error => {
           console.log("ERROR::", error.data);
@@ -199,8 +201,7 @@ class MultiMemeMaker extends Component {
         .then(response => {
           document.getElementsByClassName(
             "sharethis-inline-share-buttons"
-          )[0].style.opacity =
-            "1";
+          )[0].style.opacity = "1";
         })
         .catch(error => {
           console.log(error);
@@ -215,6 +216,18 @@ class MultiMemeMaker extends Component {
       action: "Created Multi Meme",
       label: "Content Creation",
       value: 1
+    });
+  };
+
+  openModal = () => {
+    this.setState({
+      openModal: true
+    });
+  };
+
+  onCloseModal = () => {
+    this.setState({
+      openModal: false
     });
   };
 
@@ -290,13 +303,19 @@ class MultiMemeMaker extends Component {
                 )}
               </div>
             )}
+
+            <MemeModal
+              openModal={this.state.openModal}
+              closeEvent={this.onCloseModal}
+              confirmEvent={this.createMemeStripEvent}
+            />
             {this.state.image ? null : (
               <div>
                 {this.state.showImages ? (
                   <Ripples color="rgba(255,255,255,0.3)">
                     <button
                       className="create-meme"
-                      onClick={() => this.createMemeStripEvent()}
+                      onClick={() => this.openModal()}
                     >
                       {" "}
                       {this.state.loading ? (
