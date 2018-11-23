@@ -27,13 +27,13 @@ class MemeModal extends Component {
             className="modal-button-cancel"
             onClick={() => this.props.closeEvent()}
           >
-            No
+            Not. Yet.
           </button>
           <button
             className="modal-button-confirm"
             onClick={() => this.props.confirmEvent()}
           >
-            Yes
+            Yep
           </button>
         </div>
       </Modal>
