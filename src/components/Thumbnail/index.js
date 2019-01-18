@@ -63,7 +63,7 @@ class Thumbnail extends Component {
   };
 
   render() {
-    const hiddenStyle = { height: 0, overflow: "hidden" };
+    const hiddenStyle = { height: 0, overflow: "hidden", display: "none" };
     return (
       <div>
         {this.state.hasLoadedImage && this.props.hasAllLoaded ? (
@@ -84,7 +84,10 @@ class Thumbnail extends Component {
             onClick={this.handleClick}
           />
         ) : (
-          <div className="loader-container" style={{ height: "200px" }}>
+          <div
+            className="loader-container"
+            style={{ height: "163px", width: "374px" }}
+          >
             <Loader type="line-scale" active color="#bf9800" />
           </div>
         )}
