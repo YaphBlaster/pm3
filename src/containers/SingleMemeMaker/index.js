@@ -75,6 +75,14 @@ class MemeMaker extends Component {
         this.setState({
           image: response.data
         });
+        axios.post('https://71c01mv30a.execute-api.us-west-2.amazonaws.com/dev/postUpdate',{ "imageLink": response.data.toString() })
+        .then(function (response) {
+          console.log("Here is the response from Twitter endpoint");
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       })
       .catch(error => {
         console.log(error);
