@@ -205,6 +205,8 @@ a {
   grid-gap: 10px;
   padding-bottom: 20px;
   margin-bottom: 50px; }
+  .thumbnails div {
+    display: flex; }
 
 .thumbnail {
   margin: 0 auto; }
